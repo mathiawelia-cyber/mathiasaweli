@@ -7,6 +7,7 @@ import { useInView } from "framer-motion";
 import { ExternalLink, Github, Star, Sparkles } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import Image from "next/image";
+import { assetPath } from "@/lib/utils";
 
 export default function Projects() {
   const ref = useRef(null);
@@ -62,7 +63,7 @@ export default function Projects() {
                 {project.image && (
                   <div className="rounded-xl overflow-hidden border border-[var(--border-color)]">
                     <Image
-                      src={project.image}
+                      src={assetPath(project.image!)}
                       alt={project.title}
                       width={600}
                       height={400}
@@ -128,7 +129,7 @@ export default function Projects() {
                   {project.image && (
                     <div className="rounded-lg overflow-hidden border border-[var(--border-color)] mb-4 h-40">
                       <Image
-                        src={project.image}
+                        src={assetPath(project.image!)}
                         alt={project.title}
                         width={500}
                         height={300}

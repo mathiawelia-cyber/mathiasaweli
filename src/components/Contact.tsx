@@ -14,6 +14,7 @@ import {
   AlertCircle,
 } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
+import { assetPath } from "@/lib/utils";
 
 export default function Contact() {
   const ref = useRef(null);
@@ -47,7 +48,7 @@ export default function Contact() {
     { icon: Mail, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
     { icon: Linkedin, label: "LinkedIn", value: "Mathias AWELI", href: personalInfo.linkedin },
     { icon: Github, label: "GitHub", value: "mathiawelia-cyber", href: personalInfo.github },
-    { icon: Download, label: "CV", value: "Télécharger le CV", href: "/CV_AWELI_Stage.pdf" },
+    { icon: Download, label: "CV", value: "Télécharger le CV", href: assetPath("/CV_AWELI_Stage.pdf") },
   ];
 
   const iconColors = ["var(--neon-cyan)", "var(--neon-blue)", "var(--neon-purple)", "var(--neon-pink)"];

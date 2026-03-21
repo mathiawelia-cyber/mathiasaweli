@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import { staggerContainer, fadeUp } from "@/lib/motion";
 import { Download, MapPin, Languages, Car, Quote } from "lucide-react";
 import { personalInfo, strengths } from "@/data/portfolio";
+import { assetPath } from "@/lib/utils";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
@@ -47,7 +48,7 @@ export default function About() {
             </div>
 
             <a
-              href="/CV_AWELI_Stage.pdf"
+              href={assetPath("/CV_AWELI_Stage.pdf")}
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold btn-neon"

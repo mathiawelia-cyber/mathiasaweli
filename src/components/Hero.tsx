@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { ArrowDown, Download, Linkedin, Sparkles } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 import Image from "next/image";
+import { assetPath } from "@/lib/utils";
 
 export default function Hero() {
   return (
@@ -69,7 +70,7 @@ export default function Hero() {
                 </span>
               </a>
               <a
-                href="/CV_AWELI_Stage.pdf"
+                href={assetPath("/CV_AWELI_Stage.pdf")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium btn-ghost-neon"
@@ -134,7 +135,7 @@ export default function Hero() {
               />
               <div className="absolute inset-[2px] rounded-[14px] overflow-hidden bg-[var(--background)]">
                 <Image
-                  src="/Photo_de_profil_AWELI.png"
+                  src={assetPath("/Photo_de_profil_AWELI.png")}
                   alt="Mathias AWELI"
                   width={288}
                   height={320}
