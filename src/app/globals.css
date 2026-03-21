@@ -1,26 +1,67 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
 @theme inline {
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Outfit", sans-serif;
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+:root {
+  --background: #F8F6F1;
+  --foreground: #111110;
+  --surface: #FFFFFF;
+  --surface2: #F2EFE9;
+  --ink-muted: rgba(17, 17, 16, 0.55);
+  --ink-faint: rgba(17, 17, 16, 0.28);
+  --green: #2C6E3F;
+  --green-light: #3D9156;
+  --green-glow: rgba(44, 110, 63, 0.08);
+  --gold: #8A6120;
+  --gold-light: #A67828;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --nav-bg: rgba(248, 246, 241, 0.85);
+}
+
+.dark {
+  --background: #0D0F0E;
+  --foreground: #EDE9E1;
+  --surface: #161A17;
+  --surface2: #1C211D;
+  --ink-muted: rgba(237, 233, 225, 0.55);
+  --ink-faint: rgba(237, 233, 225, 0.25);
+  --green: #4A8C5C;
+  --green-light: #6BB880;
+  --green-glow: rgba(74, 140, 92, 0.15);
+  --gold: #C9973A;
+  --gold-light: #E3B85A;
+  --border-color: rgba(255, 255, 255, 0.07);
+  --nav-bg: rgba(13, 15, 14, 0.85);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
+  font-family: var(--font-body);
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.35s, color 0.35s;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--ink-faint);
+  border-radius: 3px;
+}
+
+::selection {
+  background: var(--green);
+  color: white;
 }
