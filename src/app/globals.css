@@ -31,6 +31,26 @@
   --glow-pink: 0 0 20px rgba(236, 72, 153, 0.3), 0 0 60px rgba(236, 72, 153, 0.1);
 }
 
+/* Dark mode (explicit class for next-themes) */
+.dark {
+  --background: #050510;
+  --foreground: #e8e6f0;
+  --surface: rgba(255, 255, 255, 0.04);
+  --surface2: rgba(255, 255, 255, 0.07);
+  --ink-muted: rgba(232, 230, 240, 0.6);
+  --ink-faint: rgba(232, 230, 240, 0.25);
+  --border-color: rgba(255, 255, 255, 0.08);
+  --nav-bg: rgba(5, 5, 16, 0.75);
+  --neon-cyan: #00f0ff;
+  --neon-purple: #a855f7;
+  --neon-pink: #ec4899;
+  --neon-blue: #3b82f6;
+  --neon-green: #22d3ee;
+  --glow-cyan: 0 0 20px rgba(0, 240, 255, 0.3), 0 0 60px rgba(0, 240, 255, 0.1);
+  --glow-purple: 0 0 20px rgba(168, 85, 247, 0.3), 0 0 60px rgba(168, 85, 247, 0.1);
+  --glow-pink: 0 0 20px rgba(236, 72, 153, 0.3), 0 0 60px rgba(236, 72, 153, 0.1);
+}
+
 /* Light mode */
 .light {
   --background: #fafafe;

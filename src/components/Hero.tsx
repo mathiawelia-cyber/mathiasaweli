@@ -33,17 +33,31 @@ export default function Hero() {
               Disponible pour un stage — Avr–Août 2026
             </motion.div>
 
-            <motion.h1
+            {/* Grand nom */}
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
+              className="mb-4"
+            >
+              <h1 className="font-[family-name:var(--font-heading)] text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.95] tracking-tight">
+                <span className="text-gradient">Mathias</span>{" "}
+                <span className="text-[var(--foreground)]">E.</span>
+                <br />
+                <span className="text-gradient-cyan">AWELI</span>
+              </h1>
+            </motion.div>
+
+            <motion.h2
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2, ease: [0.22, 1, 0.36, 1] }}
-              className="font-[family-name:var(--font-heading)] text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.05] tracking-tight mb-6"
+              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+              className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight mb-6 text-[var(--ink-muted)]"
             >
-              <span className="text-gradient">Économiste</span> &{" "}
-              <br />
-              <span className="text-gradient-cyan">Analyste</span>{" "}
-              Territorial
-            </motion.h1>
+              <span className="text-[var(--foreground)]">Économiste</span> &{" "}
+              <span className="text-[var(--foreground)]">Analyste</span>{" "}
+              <span className="text-gradient">Territorial</span>
+            </motion.h2>
 
             <motion.p
               initial={{ opacity: 0, y: 20 }}
