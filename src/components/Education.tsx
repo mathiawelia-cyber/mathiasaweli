@@ -12,16 +12,16 @@ export default function Education() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="education" className="py-24">
-      <div className="max-w-6xl mx-auto px-6">
+    <section id="education" className="py-24 relative">
+      <div className="max-w-6xl mx-auto px-6 relative z-10">
         <AnimateOnScroll>
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[var(--green)] mb-3">
+          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[var(--neon-purple)] mb-3">
             Formation
           </p>
           <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-bold mb-4">
-            Parcours académique
+            Parcours<span className="text-gradient"> académique</span>
           </h2>
-          <div className="w-12 h-0.5 bg-[var(--green)] mb-12" />
+          <div className="section-line mb-12" />
         </AnimateOnScroll>
 
         <motion.div
@@ -31,20 +31,19 @@ export default function Education() {
           variants={staggerContainer}
           className="grid lg:grid-cols-[1.5fr_1fr] gap-12"
         >
-          {/* Education + Certifications */}
           <div className="space-y-8">
             {/* Diplômes */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <GraduationCap size={18} className="text-[var(--green)]" />
-                <h3 className="font-semibold">Diplômes</h3>
+                <GraduationCap size={18} className="text-[var(--neon-cyan)]" />
+                <h3 className="font-semibold text-gradient-cyan">Diplômes</h3>
               </div>
               <div className="space-y-3">
                 {education.map((edu, i) => (
                   <motion.div
                     key={i}
                     variants={fadeUp}
-                    className="p-4 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] hover:border-[var(--green)] hover:border-opacity-30 transition-colors"
+                    className="glass p-4 rounded-xl neon-border"
                   >
                     <h4 className="font-medium text-sm">{edu.degree}</h4>
                     <p className="text-xs text-[var(--ink-muted)] mt-1">
@@ -59,20 +58,17 @@ export default function Education() {
             {/* Certifications */}
             <div>
               <div className="flex items-center gap-2 mb-4">
-                <Award size={18} className="text-[var(--gold)]" />
-                <h3 className="font-semibold">Certifications AFD</h3>
+                <Award size={18} className="text-[var(--neon-purple)]" />
+                <h3 className="font-semibold text-gradient">Certifications AFD</h3>
               </div>
               <div className="space-y-3">
                 {certifications.map((cert, i) => (
                   <motion.div
                     key={i}
                     variants={fadeUp}
-                    className="p-4 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] flex items-start gap-3"
+                    className="glass p-4 rounded-xl flex items-start gap-3"
                   >
-                    <Award
-                      size={16}
-                      className="text-[var(--gold)] shrink-0 mt-0.5"
-                    />
+                    <Award size={16} className="text-[var(--neon-purple)] shrink-0 mt-0.5" />
                     <p className="text-sm text-[var(--ink-muted)]">{cert}</p>
                   </motion.div>
                 ))}
@@ -83,25 +79,27 @@ export default function Education() {
           {/* Références */}
           <div>
             <div className="flex items-center gap-2 mb-4">
-              <UserCheck size={18} className="text-[var(--green)]" />
-              <h3 className="font-semibold">Références</h3>
+              <UserCheck size={18} className="text-[var(--neon-pink)]" />
+              <h3 className="font-semibold" style={{
+                background: "linear-gradient(135deg, var(--neon-pink), var(--neon-purple))",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+              }}>Références</h3>
             </div>
             <div className="space-y-3">
-              {references.map((ref, i) => (
+              {references.map((refItem, i) => (
                 <motion.div
                   key={i}
                   variants={fadeUp}
-                  className="p-4 rounded-xl border border-[var(--border-color)] bg-[var(--surface)] hover:border-[var(--green)] hover:border-opacity-30 transition-colors"
+                  className="glass p-4 rounded-xl neon-border"
                 >
-                  <h4 className="font-medium text-sm">{ref.name}</h4>
-                  <p className="text-xs text-[var(--ink-muted)] mt-1">
-                    {ref.role}
-                  </p>
+                  <h4 className="font-medium text-sm">{refItem.name}</h4>
+                  <p className="text-xs text-[var(--ink-muted)] mt-1">{refItem.role}</p>
                   <a
-                    href={`mailto:${ref.email}`}
-                    className="text-xs text-[var(--green)] hover:underline mt-1 inline-block"
+                    href={`mailto:${refItem.email}`}
+                    className="text-xs text-[var(--neon-cyan)] hover:underline mt-1 inline-block"
                   >
-                    {ref.email}
+                    {refItem.email}
                   </a>
                 </motion.div>
               ))}

@@ -7,10 +7,12 @@ import Projects from "@/components/Projects";
 import Education from "@/components/Education";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
+import MeshBackground from "@/components/MeshBackground";
 
 export default function Home() {
   return (
     <>
+      <MeshBackground />
       <Navbar />
       <main>
         <Hero />
