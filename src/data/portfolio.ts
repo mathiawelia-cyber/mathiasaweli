@@ -24,7 +24,7 @@ export const experiences = [
     role: "Chargé d'étude — Participation citoyenne",
     company: "DREAL Grand Est · Direction Régionale de l'Environnement, de l'Aménagement et du Logement",
     location: "Grand Est",
-    period: "Avr 2025 – Août 2025",
+    period: "Avr – Août 2025",
     status: "done" as const,
     project: "État des lieux de la participation citoyenne dans la région Grand-Est",
     tasks: [
@@ -43,7 +43,7 @@ export const experiences = [
     role: "Assistant en analyse et suivi de projets territoriaux",
     company: "Ministère de la Planification du Développement et de la Coopération",
     location: "Lomé, Togo",
-    period: "Mar 2024 – Juin 2024",
+    period: "Mar – Juin 2024",
     status: "done" as const,
     project: "Élaboration du Schéma National d'Aménagement du Territoire (SNAT-2045)",
     tasks: [
