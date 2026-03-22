@@ -40,7 +40,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
               className="mb-4"
             >
-              <h1 className="font-[family-name:var(--font-heading)] text-6xl sm:text-7xl lg:text-8xl xl:text-9xl font-bold leading-[0.95] tracking-tight">
+              <h1 className="font-[family-name:var(--font-heading)] text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight">
                 <span className="text-gradient">Mathias</span>{" "}
                 <span className="text-[var(--foreground)]">E.</span>
                 <br />

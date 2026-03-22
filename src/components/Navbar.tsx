@@ -53,8 +53,27 @@ export default function Navbar() {
       >
         <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
           {/* Logo */}
-          <a href="#" className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight">
-            Mathias<span className="text-gradient">.</span>
+          <a href="#" className="flex items-center gap-2.5 group">
+            <div className="relative w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center"
+              style={{
+                background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink))",
+              }}
+            >
+              <span className="font-[family-name:var(--font-heading)] text-sm font-bold text-white tracking-wider">
+                MA
+              </span>
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "linear-gradient(135deg, var(--neon-pink), var(--neon-cyan), var(--neon-purple))",
+                }}
+              />
+              <span className="relative z-10 font-[family-name:var(--font-heading)] text-sm font-bold text-white tracking-wider absolute inset-0 flex items-center justify-center">
+                MA
+              </span>
+            </div>
+            <span className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight">
+              Mathias<span className="text-gradient">.</span>
+            </span>
           </a>
 
           {/* Desktop links */}
