@@ -1,10 +1,8 @@
 "use client";
 
 import { AnimateOnScroll, fadeUp, staggerContainer } from "@/lib/motion";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useInView } from "framer-motion";
-import { Briefcase } from "lucide-react";
 import { experiences } from "@/data/portfolio";
 
 export default function Experience() {
@@ -12,93 +10,94 @@ export default function Experience() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="experience" className="py-24 relative">
-      {/* Subtle orb */}
-      <div
-        className="absolute top-[50%] left-[-10%] w-[400px] h-[400px] rounded-full opacity-10 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(168,85,247,0.5) 0%, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
+    <section id="experience" style={{ background: "var(--bg)" }} className="py-24">
+      <div className="max-w-5xl mx-auto px-6">
+        {/* Header */}
         <AnimateOnScroll>
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[var(--neon-purple)] mb-3">
-            Parcours
-          </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-bold mb-4">
-            Expériences<span className="text-gradient"> professionnelles</span>
-          </h2>
-          <div className="section-line mb-12" />
+          <p className="eyebrow">02 — Parcours professionnel</p>
+          <div className="divider mb-4" />
+          <h2 className="sec-title mb-12">Exp&eacute;riences</h2>
         </AnimateOnScroll>
 
+        {/* Experience list */}
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
-          className="relative"
         >
-          {/* Timeline line with gradient */}
-          <div
-            className="absolute left-[19px] top-2 bottom-2 w-px hidden sm:block"
-            style={{
-              background: "linear-gradient(180deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink), transparent)",
-            }}
-          />
+          {experiences.map((xp) => (
+            <motion.div
+              key={xp.id}
+              variants={fadeUp}
+              className="grid gap-10 py-10 border-b border-[var(--border)]"
+              style={{ gridTemplateColumns: "170px 1fr" }}
+            >
+              {/* Left column: date + status */}
+              <div>
+                <p className="xp-date">{xp.period}</p>
+                <span
+                  className={`xp-status ${
+                    (xp.status as string) === "active" ? "s-active" : "s-done"
+                  }`}
+                >
+                  {(xp.status as string) === "active" ? "En cours" : "Termin\u00e9"}
+                </span>
+              </div>
 
-          <div className="space-y-8">
-            {experiences.map((xp, i) => (
-              <motion.div key={xp.id} variants={fadeUp} className="relative flex gap-6 group">
-                {/* Timeline dot */}
-                <div className="hidden sm:flex shrink-0 w-10 h-10 rounded-full glass items-center justify-center z-10 group-hover:shadow-[var(--glow-cyan)] transition-all duration-500">
-                  <Briefcase
-                    size={16}
-                    className={
-                      (xp.status as string) === "active"
-                        ? "text-[var(--neon-cyan)]"
-                        : "text-[var(--ink-faint)]"
-                    }
-                  />
-                </div>
+              {/* Right column */}
+              <div>
+                <h3
+                  className="font-bold mb-1"
+                  style={{
+                    fontFamily: "var(--font-heading)",
+                    fontSize: "1.3rem",
+                  }}
+                >
+                  {xp.role}
+                </h3>
 
-                {/* Card */}
-                <div className="flex-1 glass p-5 rounded-xl neon-border transition-all duration-500">
-                  <div className="flex flex-wrap items-start justify-between gap-2 mb-2">
-                    <div>
-                      <h3 className="font-semibold text-sm">{xp.role}</h3>
-                      <p className="text-[var(--ink-muted)] text-sm">
-                        {xp.company} · {xp.location}
-                      </p>
-                    </div>
-                    <div className="flex items-center gap-2">
-                      <span className="text-xs text-[var(--ink-faint)]">{xp.period}</span>
-                      {(xp.status as string) === "active" && (
-                        <span className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-[rgba(0,240,255,0.08)] text-[var(--neon-cyan)] border border-[rgba(0,240,255,0.2)]">
-                          <span className="w-1.5 h-1.5 rounded-full bg-[var(--neon-cyan)] animate-pulse" />
-                          En cours
-                        </span>
-                      )}
-                    </div>
-                  </div>
-                  {xp.project && (
-                    <p className="text-xs font-medium text-[var(--neon-cyan)] mb-2 opacity-80">
-                      📋 {xp.project}
-                    </p>
-                  )}
-                  <p className="text-sm text-[var(--ink-muted)] mb-3">{xp.description}</p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {xp.tags.map((tag, j) => (
-                      <span key={tag} className={j % 2 === 0 ? "pill-neon" : "pill-purple"}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
+                <p
+                  className="mb-1"
+                  style={{ color: "var(--green)", fontSize: "0.83rem" }}
+                >
+                  {xp.company} &middot; {xp.location}
+                </p>
+
+                {xp.project && (
+                  <p
+                    className="italic mb-3"
+                    style={{ color: "var(--ink-faint)", fontSize: "0.85rem" }}
+                  >
+                    {xp.project}
+                  </p>
+                )}
+
+                {/* Task list */}
+                {(xp as { tasks?: string[] }).tasks && (
+                  <ul className="mb-3 space-y-1" style={{ fontSize: "0.85rem", color: "var(--ink-muted)" }}>
+                    {((xp as { tasks?: string[] }).tasks as string[]).map(
+                      (task, idx) => (
+                        <li key={idx}>
+                          <span style={{ color: "var(--green)", marginRight: "0.4rem" }}>&rarr;</span>
+                          {task}
+                        </li>
+                      )
+                    )}
+                  </ul>
+                )}
+
+                {/* Tags */}
+                <div className="flex flex-wrap gap-2 mt-3">
+                  {xp.tags.map((tag) => (
+                    <span key={tag} className="tag">
+                      {tag}
+                    </span>
+                  ))}
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

@@ -1,201 +1,80 @@
 "use client";
 
-import { AnimateOnScroll, fadeUp, staggerContainer } from "@/lib/motion";
-import { motion } from "framer-motion";
-import { useRef, useState, FormEvent } from "react";
-import { useInView } from "framer-motion";
-import {
-  Mail,
-  Linkedin,
-  Github,
-  Download,
-  Phone,
-  MapPin,
-  Send,
-  CheckCircle,
-  AlertCircle,
-} from "lucide-react";
+import { motion, useInView } from "framer-motion";
+import { useRef } from "react";
 import { personalInfo } from "@/data/portfolio";
 import { assetPath } from "@/lib/utils";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const contactRows = [
+  { icon: "✉️", label: "Email", value: "mathiasawli@gmail.com", href: "mailto:mathiasawli@gmail.com" },
+  { icon: "💼", label: "LinkedIn", value: "@mathiasAWELI", href: "https://www.linkedin.com/in/mathias-aweli/" },
+  { icon: "🐙", label: "GitHub", value: "mathiawelia-cyber", href: "https://github.com/mathiawelia-cyber" },
+  { icon: "📄", label: "Curriculum Vitae", value: "Télécharger mon CV (PDF)", href: "__CV__" },
+];
 
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-
-  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setStatus("sending");
-    const form = e.currentTarget;
-    const data = new FormData(form);
-    try {
-      const res = await fetch("https://formspree.io/f/xpwdjqgb", {
-        method: "POST",
-        body: data,
-        headers: { Accept: "application/json" },
-      });
-      if (res.ok) {
-        setStatus("sent");
-        form.reset();
-        setTimeout(() => setStatus("idle"), 4000);
-      } else {
-        setStatus("error");
-      }
-    } catch {
-      setStatus("error");
-    }
-  };
-
-  const contactLinks = [
-    { icon: Mail, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
-    { icon: Phone, label: "Téléphone", value: personalInfo.phone, href: `tel:${personalInfo.phone?.replace(/\s/g, "")}` },
-    { icon: MapPin, label: "Localisation", value: personalInfo.location, href: "#" },
-    { icon: Linkedin, label: "LinkedIn", value: "Mathias AWELI", href: personalInfo.linkedin },
-    { icon: Github, label: "GitHub", value: "mathiawelia-cyber", href: personalInfo.github },
-    { icon: Download, label: "CV", value: "Télécharger le CV", href: assetPath("/CV_AWELI_Stage.pdf") },
-  ];
-
-  const iconColors = ["var(--neon-cyan)", "var(--neon-green)", "var(--neon-pink)", "var(--neon-blue)", "var(--neon-purple)", "var(--neon-pink)"];
 
   return (
-    <section id="contact" className="py-24 relative">
-      {/* Orbs */}
-      <div
-        className="absolute bottom-0 left-[20%] w-[500px] h-[500px] rounded-full opacity-15 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(168,85,247,0.4) 0%, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <AnimateOnScroll>
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[var(--neon-pink)] mb-3">
-            Contact
-          </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-bold mb-4">
-            Travaillons<span className="text-gradient"> ensemble</span>
-          </h2>
-          <div className="section-line mb-12" />
-        </AnimateOnScroll>
-
+    <section id="contact" className="contact-section" style={{ padding: "clamp(4rem,8vw,6.5rem) 0" }}>
+      <div className="max-w-[1080px] mx-auto px-[clamp(1.5rem,4vw,3rem)]">
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          variants={staggerContainer}
-          className="grid lg:grid-cols-2 gap-12"
+          variants={stagger}
+          className="grid grid-cols-2 gap-20 contact-grid"
+          style={{ alignItems: "start" }}
         >
-          {/* Contact links */}
-          <motion.div variants={fadeUp} className="space-y-4">
-            <p className="text-[var(--ink-muted)] leading-relaxed mb-6">
-              N&apos;hésitez pas à me contacter pour discuter d&apos;opportunités de
-              collaboration, de stages ou de projets liés au développement territorial,
-              la planification et l&apos;évaluation de politiques publiques.
+          {/* Left side */}
+          <motion.div variants={fadeUp}>
+            <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--green-l)", marginBottom: "0.5rem" }}>
+              06 — Contact
             </p>
-            {contactLinks.map((link, i) => (
+            <div style={{ width: 36, height: 2, background: "var(--green-l)", opacity: 0.5, marginBottom: "1.5rem" }} />
+            <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 700, lineHeight: 1.1, marginBottom: "1.5rem", color: "#fff" }}>
+              Travaillons<br /><em style={{ color: "var(--green-l)", fontStyle: "italic" }}>ensemble.</em>
+            </h2>
+            <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.93rem", lineHeight: 1.85 }}>
+              Ouvert aux opportunités professionnelles, collaborations académiques et échanges autour
+              de l&apos;économie territoriale, du diagnostic territorial et de l&apos;analyse de données
+              au service des politiques publiques.
+            </p>
+          </motion.div>
+
+          {/* Right side — contact rows */}
+          <motion.div variants={fadeUp} className="flex flex-col gap-3.5">
+            {contactRows.map((row) => (
               <a
-                key={link.label}
-                href={link.href}
-                target={link.label !== "Email" ? "_blank" : undefined}
-                rel={link.label !== "Email" ? "noopener noreferrer" : undefined}
-                className="flex items-center gap-4 p-4 rounded-xl glass neon-border group"
+                key={row.label}
+                href={row.href === "__CV__" ? assetPath("/CV_AWELI_Stage.pdf") : row.href}
+                target={row.href.startsWith("mailto") ? undefined : "_blank"}
+                rel={row.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
+                download={row.href === "__CV__" ? true : undefined}
+                className="c-row"
               >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center transition-all duration-300"
-                  style={{
-                    background: `${iconColors[i]}10`,
-                  }}
-                >
-                  <link.icon
-                    size={18}
-                    style={{ color: iconColors[i] }}
-                    className="transition-all duration-300"
-                  />
-                </div>
+                <span style={{ fontSize: "1.15rem", flexShrink: 0 }}>{row.icon}</span>
                 <div>
-                  <p className="text-xs text-[var(--ink-muted)]">{link.label}</p>
-                  <p className="text-sm font-medium">{link.value}</p>
+                  <div style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.35)", marginBottom: "0.1rem" }}>
+                    {row.label}
+                  </div>
+                  <div style={{ fontSize: "0.9rem", fontWeight: 500 }}>
+                    {row.value}
+                  </div>
                 </div>
               </a>
             ))}
-          </motion.div>
-
-          {/* Contact form */}
-          <motion.div variants={fadeUp}>
-            <form onSubmit={handleSubmit} className="glass p-6 rounded-xl space-y-4">
-              <div className="grid sm:grid-cols-2 gap-4">
-                <div>
-                  <label htmlFor="name" className="block text-xs text-[var(--ink-muted)] mb-1.5">
-                    Nom complet
-                  </label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    required
-                    className="w-full px-4 py-2.5 text-sm rounded-lg border border-[var(--border-color)] bg-[var(--surface2)] text-[var(--foreground)] placeholder:text-[var(--ink-faint)] focus:outline-none transition-all duration-300"
-                    placeholder="Votre nom"
-                  />
-                </div>
-                <div>
-                  <label htmlFor="email" className="block text-xs text-[var(--ink-muted)] mb-1.5">
-                    Email
-                  </label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    required
-                    className="w-full px-4 py-2.5 text-sm rounded-lg border border-[var(--border-color)] bg-[var(--surface2)] text-[var(--foreground)] placeholder:text-[var(--ink-faint)] focus:outline-none transition-all duration-300"
-                    placeholder="votre@email.com"
-                  />
-                </div>
-              </div>
-              <div>
-                <label htmlFor="subject" className="block text-xs text-[var(--ink-muted)] mb-1.5">
-                  Objet
-                </label>
-                <input
-                  type="text"
-                  id="subject"
-                  name="subject"
-                  required
-                  className="w-full px-4 py-2.5 text-sm rounded-lg border border-[var(--border-color)] bg-[var(--surface2)] text-[var(--foreground)] placeholder:text-[var(--ink-faint)] focus:outline-none transition-all duration-300"
-                  placeholder="Objet du message"
-                />
-              </div>
-              <div>
-                <label htmlFor="message" className="block text-xs text-[var(--ink-muted)] mb-1.5">
-                  Message
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  rows={5}
-                  required
-                  className="w-full px-4 py-2.5 text-sm rounded-lg border border-[var(--border-color)] bg-[var(--surface2)] text-[var(--foreground)] placeholder:text-[var(--ink-faint)] focus:outline-none transition-all duration-300 resize-none"
-                  placeholder="Votre message..."
-                />
-              </div>
-              <button
-                type="submit"
-                disabled={status === "sending"}
-                className="w-full flex items-center justify-center gap-2 px-5 py-3 text-sm font-semibold btn-neon disabled:opacity-50"
-              >
-                <span className="flex items-center gap-2 relative z-10">
-                  {status === "sending" ? (
-                    "Envoi en cours..."
-                  ) : status === "sent" ? (
-                    <><CheckCircle size={16} /> Message envoyé !</>
-                  ) : status === "error" ? (
-                    <><AlertCircle size={16} /> Erreur, réessayez</>
-                  ) : (
-                    <><Send size={16} /> Envoyer le message</>
-                  )}
-                </span>
-              </button>
-            </form>
           </motion.div>
         </motion.div>
       </div>

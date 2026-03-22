@@ -1,35 +1,90 @@
 "use client";
 
-import { AnimateOnScroll, fadeUp, staggerContainer } from "@/lib/motion";
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
-import {
-  BarChart3,
-  Database,
-  MapPin,
-  ClipboardCheck,
-  PenTool,
-  Monitor,
-} from "lucide-react";
-import { skills } from "@/data/portfolio";
 
-const iconMap: Record<string, React.ElementType> = {
-  BarChart3,
-  Database,
-  MapPin,
-  ClipboardCheck,
-  PenTool,
-  Monitor,
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
 };
 
-const neonColors = [
-  { from: "var(--neon-cyan)", to: "var(--neon-blue)", glow: "var(--glow-cyan)" },
-  { from: "var(--neon-purple)", to: "var(--neon-pink)", glow: "var(--glow-purple)" },
-  { from: "var(--neon-pink)", to: "var(--neon-purple)", glow: "var(--glow-pink)" },
-  { from: "var(--neon-cyan)", to: "var(--neon-purple)", glow: "var(--glow-cyan)" },
-  { from: "var(--neon-purple)", to: "var(--neon-cyan)", glow: "var(--glow-purple)" },
-  { from: "var(--neon-pink)", to: "var(--neon-cyan)", glow: "var(--glow-pink)" },
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.08 } },
+};
+
+const skillsData = [
+  {
+    icon: "📊",
+    title: "Statistiques & Économétrie",
+    pills: [
+      { label: "R / RStudio", hi: true },
+      { label: "Stata", hi: true },
+      { label: "EViews", hi: true },
+      { label: "Probit / Logit" },
+      { label: "Ordered Probit" },
+      { label: "Séries temporelles" },
+      { label: "Analyse descriptive" },
+    ],
+  },
+  {
+    icon: "🗺️",
+    title: "SIG & Cartographie",
+    pills: [
+      { label: "QGIS", hi: true },
+      { label: "Analyse spatiale" },
+      { label: "Cartographie thématique" },
+      { label: "Dashboard QGIS" },
+      { label: "OpenLayers" },
+    ],
+  },
+  {
+    icon: "🤖",
+    title: "Data Science & ML",
+    pills: [
+      { label: "Python", hi: true },
+      { label: "XGBoost", hi: true },
+      { label: "Random Forest" },
+      { label: "K-Means" },
+      { label: "Streamlit" },
+      { label: "Pandas" },
+    ],
+  },
+  {
+    icon: "🔍",
+    title: "Méthodes de recherche",
+    pills: [
+      { label: "Diagnostic territorial", hi: true },
+      { label: "Enquêtes quantitatives" },
+      { label: "Entretiens semi-directifs" },
+      { label: "Focus groupes" },
+      { label: "Évaluation politiques publiques" },
+      { label: "LimeSurvey · KoBoToolbox" },
+    ],
+  },
+  {
+    icon: "✍️",
+    title: "Production & Communication",
+    pills: [
+      { label: "Rapports décideurs", hi: true },
+      { label: "Notes de synthèse", hi: true },
+      { label: "Comptes rendus d'ateliers" },
+      { label: "Pack Office avancé" },
+      { label: "Aisance écrite & orale" },
+    ],
+  },
+  {
+    icon: "🌍",
+    title: "Développement territorial",
+    pills: [
+      { label: "Foncier agricole", hi: true },
+      { label: "Attractivité économique" },
+      { label: "Gestion multi-acteurs" },
+      { label: "Animation d'ateliers" },
+      { label: "Appui aux collectivités" },
+    ],
+  },
 ];
 
 export default function Skills() {
@@ -37,65 +92,45 @@ export default function Skills() {
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="skills" className="py-24 relative">
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <AnimateOnScroll>
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[var(--neon-pink)] mb-3">
-            Compétences
-          </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-bold mb-4">
-            Savoir-faire<span className="text-gradient"> technique</span>
-          </h2>
-          <div className="section-line mb-12" />
-        </AnimateOnScroll>
+    <section id="skills" className="section-alt" style={{ padding: "clamp(4rem,8vw,6.5rem) 0" }}>
+      <div className="max-w-[1080px] mx-auto px-[clamp(1.5rem,4vw,3rem)]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="eyebrow">03 — Outils & méthodes</p>
+          <div className="divider" />
+          <h2 className="sec-title">Compétences</h2>
+        </motion.div>
 
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          variants={staggerContainer}
-          className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4"
+          variants={stagger}
+          className="grid grid-cols-3 gap-6 skills-grid-custom"
         >
-          {skills.map((skill, i) => {
-            const Icon = iconMap[skill.icon];
-            const color = neonColors[i % neonColors.length];
-            return (
-              <motion.div
-                key={skill.title}
-                variants={fadeUp}
-                whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                className="glass p-5 rounded-xl neon-border group cursor-default"
-              >
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center mb-4 transition-all duration-400 group-hover:shadow-lg"
-                  style={{
-                    background: `linear-gradient(135deg, ${color.from}20, ${color.to}10)`,
-                  }}
-                >
-                  <Icon
-                    size={20}
-                    style={{ color: color.from }}
-                    className="transition-all duration-300"
-                  />
-                </div>
-                <h3 className="font-semibold text-sm mb-3">{skill.title}</h3>
-                <div className="flex flex-wrap gap-1.5">
-                  {skill.items.map((item) => (
-                    <span
-                      key={item}
-                      className={
-                        skill.highlight.includes(item)
-                          ? "pill-neon font-medium"
-                          : "px-2.5 py-1 text-xs rounded-md bg-[var(--surface2)] text-[var(--ink-muted)] border border-[var(--border-color)]"
-                      }
-                    >
-                      {item}
-                    </span>
-                  ))}
-                </div>
-              </motion.div>
-            );
-          })}
+          {skillsData.map((skill) => (
+            <motion.div
+              key={skill.title}
+              variants={fadeUp}
+              className="card p-7"
+            >
+              <div className="text-2xl mb-3">{skill.icon}</div>
+              <div className="text-xs font-bold uppercase tracking-[0.1em] text-[var(--green)] mb-4">
+                {skill.title}
+              </div>
+              <div className="flex flex-wrap gap-1.5">
+                {skill.pills.map((p) => (
+                  <span key={p.label} className={`pill ${p.hi ? "hi" : ""}`}>
+                    {p.label}
+                  </span>
+                ))}
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

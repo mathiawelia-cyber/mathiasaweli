@@ -12,9 +12,9 @@ export const personalInfo = {
   description:
     "Passionné par le développement local, je dispose de compétences solides dans la collecte, le traitement et l'analyse de données, l'évaluation de politiques publiques et la coordination de projets de développement. Je souhaite contribuer à l'accompagnement des collectivités dans leurs démarches de planification, d'attractivité et de développement des territoires.",
   stats: [
-    { value: "3", label: "Expériences" },
-    { value: "2", label: "Certifications" },
-    { value: "3+", label: "Projets" },
+    { value: "4+", label: "Expériences\nprofessionnelles" },
+    { value: "2", label: "Pays &\ncontextes terrain" },
+    { value: "6+", label: "Outils stat\n& SIG maîtrisés" },
   ],
 };
 
@@ -45,15 +45,39 @@ export const experiences = [
   },
   {
     id: 3,
-    role: "Chargé d'étude",
+    role: "Chargé d'étude — Zones agricoles ZAAP",
     company: "Cellule Présidentielle d'Exécution et de Suivi des Projets Prioritaires (CPES)",
     location: "Lomé, Togo",
     period: "Sept – Oct 2022",
     status: "done" as const,
-    project: "Collecte de données sur les Zones d'aménagement Agricoles Planifiées (ZAAP) — Région Maritime et Région Plateaux",
+    project: "Collecte de données sur les ZAAP — Régions Maritime et Plateaux",
+    tasks: [
+      "Enquêtes agricoles de terrain dans deux régions du Togo",
+      "Conduite de 10 focus groupes et 25 entretiens individuels sur les conditions de production et l'accès aux ressources",
+      "Collecte, traitement et analyse des données socio-économiques",
+      "Rédaction du rapport de mission final",
+    ],
     description:
       "Enquêtes agricoles de terrain. Conduite de 10 focus groupes et 25 entretiens individuels sur les conditions de production et l'accès aux ressources. Collecte et analyse des données socio-économiques. Rédaction du rapport de mission.",
-    tags: ["Enquêtes terrain", "Focus groupes", "Données socio-économiques", "Agriculture"],
+    tags: ["Enquêtes terrain", "Focus groupes", "ZAAP", "Analyse socio-éco", "Rapport de mission"],
+  },
+  {
+    id: 4,
+    role: "Assistant au responsable des opérations",
+    company: "Global Research and Consulting Centre (GR2C)",
+    location: "Lomé, Togo",
+    period: "Avr – Oct 2022",
+    status: "done" as const,
+    project: "Appui aux opérations du cabinet de conseil et de recherche",
+    tasks: [
+      "Planification de projets de développement rural et agricole",
+      "Élaboration de plans d'affaire pour les partenaires et clients",
+      "Appui aux activités de recherche et de conseil en agriculture et développement rural",
+      "Coordination opérationnelle et suivi des projets multi-acteurs",
+    ],
+    description:
+      "Cabinet de conseil reconnu pour son expertise en agriculture, développement rural, et planification de projets. Planification de projets, élaboration de plans d'affaire et appui opérationnel.",
+    tags: ["Planification de projets", "Plans d'affaire", "Agriculture", "Développement rural", "Conseil"],
   },
 ];
 
@@ -165,7 +189,14 @@ export const education = [
     degree: "Master Planification du développement — Planification territoriale",
     school: "Université de Kara",
     location: "Togo",
-    period: "",
+    period: "Antérieur",
+  },
+  {
+    degree: "Licence — Sciences Agronomiques",
+    school: "Université de Lomé",
+    location: "Togo",
+    period: "Antérieur",
+    detail: "Spécialité Agroéconomie. Microéconomie, économie agricole et rurale, statistiques appliquées.",
   },
 ];
 
@@ -184,6 +215,11 @@ export const references = [
     name: "Céline JALTIER",
     email: "Celine.JALTIER@bourgognefranchecomte.fr",
     role: "Chargée de mission Stratégique Relations aux Territoires — Région Bourgogne-Franche-Comté",
+  },
+  {
+    name: "KULO Abalo",
+    email: "kulomathias@yahoo.fr",
+    role: "Professeur & Directeur de l'École Supérieure d'Agronomie — Université de Lomé, Togo",
   },
 ];
 

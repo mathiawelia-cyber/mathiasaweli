@@ -1,174 +1,220 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDown, Download, Linkedin, Sparkles } from "lucide-react";
 import { personalInfo } from "@/data/portfolio";
 import Image from "next/image";
 import { assetPath } from "@/lib/utils";
 
+const fadeUp = (delay: number) => ({
+  initial: { opacity: 0, y: 30 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.7, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
+});
+
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center pt-16 overflow-hidden">
-      {/* Local orbs for hero */}
+    <section
+      className="relative flex items-center overflow-hidden"
+      style={{
+        minHeight: "100vh",
+        paddingTop: 64,
+        background: "var(--bg)",
+      }}
+    >
+      {/* Decorative vertical lines */}
       <div
-        className="absolute top-[10%] right-[10%] w-[300px] h-[300px] rounded-full opacity-20 animate-pulse"
+        className="pointer-events-none absolute top-0 bottom-0"
         style={{
-          background: "radial-gradient(circle, rgba(0,240,255,0.5) 0%, transparent 70%)",
-          filter: "blur(60px)",
+          right: "15%",
+          width: 1,
+          background:
+            "linear-gradient(to bottom, transparent, var(--border), transparent)",
+        }}
+      />
+      <div
+        className="pointer-events-none absolute top-0 bottom-0"
+        style={{
+          right: "30%",
+          width: 1,
+          background:
+            "linear-gradient(to bottom, transparent, var(--border), transparent)",
         }}
       />
 
       <div className="max-w-6xl mx-auto px-6 w-full relative z-10">
-        <div className="grid lg:grid-cols-[1fr_auto] gap-12 items-center">
-          {/* Text content */}
-          <div className="max-w-2xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.5, delay: 0.1 }}
-              className="inline-flex items-center gap-2 px-4 py-2 rounded-full glass text-xs font-medium text-[var(--neon-cyan)] mb-6"
-            >
-              <Sparkles size={14} className="text-[var(--neon-purple)]" />
-              <span className="w-2 h-2 rounded-full bg-[var(--neon-cyan)] animate-pulse" />
-              Disponible pour un stage — Avr–Août 2026
+        <div
+          className="hero-grid items-center"
+          style={{
+            display: "grid",
+            gridTemplateColumns: "1fr 340px",
+            gap: "3rem",
+          }}
+        >
+          {/* Left side */}
+          <div>
+            {/* Pill */}
+            <motion.div {...fadeUp(0.1)} className="mb-6">
+              <span
+                className="inline-flex items-center gap-2 px-4 py-2 rounded-full"
+                style={{
+                  border: "1px solid var(--border)",
+                  fontSize: "0.75rem",
+                  textTransform: "uppercase",
+                  letterSpacing: "0.05em",
+                  color: "var(--ink-muted)",
+                }}
+              >
+                <span
+                  className="animate-pulse"
+                  style={{
+                    width: 8,
+                    height: 8,
+                    borderRadius: "50%",
+                    background: "var(--green)",
+                    display: "inline-block",
+                  }}
+                />
+                Disponible &middot; Metz, France &middot; Avril 2026
+              </span>
             </motion.div>
 
-            {/* Grand nom */}
-            <motion.div
-              initial={{ opacity: 0, y: 30 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.7, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-              className="mb-4"
+            {/* Title */}
+            <motion.h1
+              {...fadeUp(0.2)}
+              className="mb-6"
+              style={{
+                fontFamily: "var(--font-heading), 'Cormorant Garamond', serif",
+                fontSize: "clamp(3.5rem, 7.5vw, 6.5rem)",
+                fontWeight: 600,
+                lineHeight: 0.95,
+                letterSpacing: "-0.02em",
+              }}
             >
-              <h1 className="font-[family-name:var(--font-heading)] text-5xl sm:text-6xl lg:text-7xl font-bold leading-[0.95] tracking-tight">
-                <span className="text-gradient">Mathias</span>{" "}
-                <span className="text-[var(--foreground)]">E.</span>
-                <br />
-                <span className="text-gradient-cyan">AWELI</span>
-              </h1>
-            </motion.div>
+              <span style={{ color: "var(--ink-faint)" }}>Économiste</span>
+              <br />
+              <span style={{ color: "var(--ink)" }}>&amp; Analyste</span>
+              <br />
+              <span
+                style={{
+                  color: "var(--green)",
+                  fontStyle: "italic",
+                }}
+              >
+                Territorial
+              </span>
+            </motion.h1>
 
-            <motion.h2
-              initial={{ opacity: 0, y: 40 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
-              className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight mb-6 text-[var(--ink-muted)]"
-            >
-              <span className="text-[var(--foreground)]">Chargé</span>{" "}
-              <span className="text-[var(--ink-muted)]">de</span>{" "}
-              <span className="text-gradient">planification</span>
-            </motion.h2>
-
+            {/* Description */}
             <motion.p
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.4 }}
-              className="text-lg text-[var(--ink-muted)] leading-relaxed mb-8 max-w-lg"
+              {...fadeUp(0.35)}
+              className="mb-8"
+              style={{
+                fontSize: "1.05rem",
+                lineHeight: 1.7,
+                color: "var(--ink-muted)",
+                maxWidth: "32rem",
+              }}
             >
-              {personalInfo.description}
+              <strong style={{ color: "var(--ink)" }}>
+                {personalInfo.fullName}
+              </strong>{" "}
+              — {personalInfo.description}
             </motion.p>
 
+            {/* Buttons */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.5 }}
-              className="flex flex-wrap gap-3 mb-12"
+              {...fadeUp(0.45)}
+              className="flex flex-wrap gap-3 mb-10"
             >
               <a
                 href="#projects"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold btn-neon"
+                className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-colors"
               >
-                <span className="flex items-center gap-2">
-                  Voir mes projets
-                  <ArrowDown size={16} />
-                </span>
+                Voir mes projets &rarr;
               </a>
               <a
-                href={assetPath("/CV_AWELI_Stage.pdf")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium btn-ghost-neon"
+                href="#contact"
+                className="btn-ghost inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-md transition-colors"
               >
-                <Download size={16} />
-                Télécharger CV
+                Me contacter
               </a>
               <a
                 href={personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium btn-ghost-neon"
+                className="btn-ghost inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-md transition-colors"
               >
-                <Linkedin size={16} />
-                LinkedIn
+                LinkedIn &#8599;
               </a>
             </motion.div>
 
-            {/* Stats with neon glow */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.6, delay: 0.7 }}
-              className="flex gap-8"
-            >
-              {personalInfo.stats.map((stat, i) => (
-                <div key={stat.label} className="relative group">
+            {/* Stats */}
+            <motion.div {...fadeUp(0.6)} className="flex gap-10">
+              {personalInfo.stats.map((stat) => (
+                <div key={stat.label}>
                   <div
-                    className="font-[family-name:var(--font-heading)] text-3xl font-bold"
                     style={{
-                      background: `linear-gradient(135deg, ${
-                        i === 0 ? "var(--neon-cyan)" : i === 1 ? "var(--neon-purple)" : "var(--neon-pink)"
-                      }, ${
-                        i === 0 ? "var(--neon-blue)" : i === 1 ? "var(--neon-pink)" : "var(--neon-purple)"
-                      })`,
-                      WebkitBackgroundClip: "text",
-                      WebkitTextFillColor: "transparent",
+                      fontFamily:
+                        "var(--font-heading), 'Cormorant Garamond', serif",
+                      fontSize: "2.5rem",
+                      fontWeight: 600,
+                      color: "var(--green)",
+                      lineHeight: 1,
                     }}
                   >
                     {stat.value}
                   </div>
-                  <div className="text-xs text-[var(--ink-muted)] mt-1">{stat.label}</div>
+                  <div
+                    className="mt-1"
+                    style={{
+                      fontSize: "0.75rem",
+                      color: "var(--ink-muted)",
+                      whiteSpace: "pre-line",
+                    }}
+                  >
+                    {stat.label}
+                  </div>
                 </div>
               ))}
             </motion.div>
           </div>
 
-          {/* Photo with neon border */}
+          {/* Right side — photo */}
           <motion.div
-            initial={{ opacity: 0, scale: 0.9 }}
+            initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
-            className="hidden lg:block relative"
+            transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+            className="hidden lg:block"
           >
-            <div className="relative w-72 h-80 rounded-2xl overflow-hidden group">
-              {/* Neon glow border */}
-              <div
-                className="absolute -inset-[2px] rounded-2xl opacity-60 group-hover:opacity-100 transition-opacity duration-500"
-                style={{
-                  background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink))",
-                }}
-              />
-              <div className="absolute inset-[2px] rounded-[14px] overflow-hidden bg-[var(--background)]">
-                <Image
-                  src={assetPath("/Photo_de_profil_AWELI.png")}
-                  alt="Mathias AWELI"
-                  width={288}
-                  height={320}
-                  className="object-cover w-full h-full"
-                  priority
-                />
-              </div>
-            </div>
-            {/* Glow behind photo */}
             <div
-              className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-80 h-80 rounded-full -z-10"
               style={{
-                background: "radial-gradient(circle, rgba(168,85,247,0.2) 0%, transparent 70%)",
-                filter: "blur(40px)",
+                borderRadius: 8,
+                overflow: "hidden",
+                aspectRatio: "3/4",
+                boxShadow: "0 24px 48px rgba(0,0,0,0.12)",
               }}
-            />
+            >
+              <Image
+                src={assetPath("/Photo_de_profil_AWELI.png")}
+                alt={personalInfo.name}
+                width={340}
+                height={453}
+                className="object-cover w-full h-full"
+                priority
+              />
+            </div>
           </motion.div>
         </div>
       </div>
+
+      {/* Responsive style for hero-grid */}
+      <style jsx global>{`
+        @media (max-width: 1023px) {
+          .hero-grid {
+            grid-template-columns: 1fr !important;
+          }
+        }
+      `}</style>
     </section>
   );
 }

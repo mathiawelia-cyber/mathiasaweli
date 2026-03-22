@@ -1,156 +1,86 @@
 "use client";
 
-import { AnimateOnScroll, fadeUp, staggerContainer } from "@/lib/motion";
-import { motion } from "framer-motion";
+import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { useInView } from "framer-motion";
-import { ExternalLink, Github, Star, Sparkles } from "lucide-react";
 import { projects } from "@/data/portfolio";
 import Image from "next/image";
 import { assetPath } from "@/lib/utils";
+
+const fadeUp = {
+  hidden: { opacity: 0, y: 24 },
+  visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
+};
+
+const stagger = {
+  hidden: {},
+  visible: { transition: { staggerChildren: 0.1 } },
+};
 
 export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
-    <section id="projects" className="py-24 relative">
-      {/* Orb */}
-      <div
-        className="absolute top-[30%] right-[-10%] w-[400px] h-[400px] rounded-full opacity-10 pointer-events-none"
-        style={{
-          background: "radial-gradient(circle, rgba(0,240,255,0.5) 0%, transparent 70%)",
-          filter: "blur(80px)",
-        }}
-      />
-
-      <div className="max-w-6xl mx-auto px-6 relative z-10">
-        <AnimateOnScroll>
-          <p className="text-xs font-medium tracking-[0.2em] uppercase text-[var(--neon-cyan)] mb-3">
-            Réalisations
-          </p>
-          <h2 className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl font-bold mb-4">
-            Projets<span className="text-gradient"> clés</span>
-          </h2>
-          <div className="section-line mb-12" />
-        </AnimateOnScroll>
+    <section id="projects" style={{ background: "var(--bg)", padding: "clamp(4rem,8vw,6.5rem) 0" }}>
+      <div className="max-w-[1080px] mx-auto px-[clamp(1.5rem,4vw,3rem)]">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.5 }}
+        >
+          <p className="eyebrow">04 — Réalisations</p>
+          <div className="divider" />
+          <h2 className="sec-title">Projets</h2>
+        </motion.div>
 
         <motion.div
           ref={ref}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          variants={staggerContainer}
-          className="space-y-6"
+          variants={stagger}
+          className="grid grid-cols-2 gap-6 proj-grid-custom"
         >
-          {/* Featured project */}
-          {projects
-            .filter((p) => p.featured)
-            .map((project) => (
-              <motion.div
-                key={project.id}
-                variants={fadeUp}
-                className="relative grid md:grid-cols-[1fr_1.2fr] gap-6 p-6 rounded-2xl glass group overflow-hidden"
-              >
-                {/* Gradient border */}
-                <div
-                  className="absolute -inset-[1px] rounded-2xl opacity-40 group-hover:opacity-80 transition-opacity duration-700 -z-10"
-                  style={{
-                    background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink))",
-                  }}
+          {projects.map((project) => (
+            <motion.div
+              key={project.id}
+              variants={fadeUp}
+              className={`proj-card ${project.featured ? "col-span-2" : ""}`}
+              style={project.featured ? { display: "grid", gridTemplateColumns: "1.1fr 1fr" } : {}}
+            >
+              {project.image ? (
+                <Image
+                  src={assetPath(project.image)}
+                  alt={project.title}
+                  width={600}
+                  height={280}
+                  className="object-cover w-full"
+                  style={{ height: project.featured ? "100%" : 210, minHeight: project.featured ? 280 : undefined, background: "var(--surface2)" }}
                 />
-                <div className="absolute inset-0 rounded-2xl bg-[var(--background)] -z-[5]" />
-
-                {project.image && (
-                  <div className="rounded-xl overflow-hidden border border-[var(--border-color)]">
-                    <Image
-                      src={assetPath(project.image!)}
-                      alt={project.title}
-                      width={600}
-                      height={400}
-                      className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-700"
-                    />
-                  </div>
-                )}
-                <div className="flex flex-col justify-center">
-                  <div className="flex items-center gap-2 mb-3">
-                    <Sparkles size={14} className="text-[var(--neon-purple)]" />
-                    <span className="text-xs font-semibold text-gradient">Projet phare</span>
-                  </div>
-                  <h3 className="font-[family-name:var(--font-heading)] text-2xl font-bold mb-3">
-                    {project.title}
-                  </h3>
-                  <p className="text-sm text-[var(--ink-muted)] leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5 mb-5">
-                    {project.tags.map((tag) => (
-                      <span key={tag} className="pill-neon font-medium">{tag}</span>
-                    ))}
-                  </div>
-                  <div className="flex gap-3">
-                    {project.github && project.github !== "#" && (
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 text-xs font-medium btn-ghost-neon"
-                      >
-                        <Github size={14} /> Code source
-                      </a>
-                    )}
-                    {project.demo && project.demo !== "#" && (
-                      <a
-                        href={project.demo}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 px-4 py-2 text-xs font-semibold btn-neon"
-                      >
-                        <span className="flex items-center gap-2">
-                          <ExternalLink size={14} /> Démo live
-                        </span>
-                      </a>
-                    )}
-                  </div>
+              ) : (
+                <div className="flex items-center justify-center" style={{ height: 210, fontSize: "3.5rem", background: "var(--surface2)" }}>
+                  🌍
                 </div>
-              </motion.div>
-            ))}
-
-          {/* Other projects */}
-          <div className="grid md:grid-cols-2 gap-6">
-            {projects
-              .filter((p) => !p.featured)
-              .map((project) => (
-                <motion.div
-                  key={project.id}
-                  variants={fadeUp}
-                  whileHover={{ y: -6, transition: { duration: 0.2 } }}
-                  className="glass p-5 rounded-xl neon-border group cursor-default"
-                >
-                  {project.image && (
-                    <div className="rounded-lg overflow-hidden border border-[var(--border-color)] mb-4 h-40">
-                      <Image
-                        src={assetPath(project.image!)}
-                        alt={project.title}
-                        width={500}
-                        height={300}
-                        className="object-cover w-full h-full group-hover:scale-[1.03] transition-transform duration-700"
-                      />
-                    </div>
-                  )}
-                  <h3 className="font-semibold mb-2">{project.title}</h3>
-                  <p className="text-sm text-[var(--ink-muted)] leading-relaxed mb-4">
-                    {project.description}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {project.tags.map((tag, i) => (
-                      <span key={tag} className={i % 2 === 0 ? "pill-neon" : "pill-purple"}>
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-                </motion.div>
-              ))}
-          </div>
+              )}
+              <div className="p-6 flex flex-col flex-1">
+                <p style={{ fontSize: "0.7rem", fontWeight: 700, letterSpacing: "0.12em", textTransform: "uppercase", color: "var(--gold-l)", marginBottom: "0.5rem" }}>
+                  {project.tags.slice(0, 3).join(" · ")}
+                </p>
+                <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.25rem", fontWeight: 700, marginBottom: "0.7rem", lineHeight: 1.3 }}>
+                  {project.title}
+                </h3>
+                <p style={{ fontSize: "0.85rem", color: "var(--ink-muted)", lineHeight: 1.75, flex: 1, marginBottom: "1.2rem" }}>
+                  {project.description}
+                </p>
+                <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid var(--border)" }}>
+                  <span style={{ fontSize: "0.74rem", color: "var(--ink-faint)" }}>{project.tags.join(" · ")}</span>
+                  <a href={project.github || "#contact"} target={project.github ? "_blank" : undefined} rel={project.github ? "noopener noreferrer" : undefined} style={{ fontSize: "0.8rem", color: "var(--green)", fontWeight: 600, textDecoration: "none" }}>
+                    {project.github && project.github !== "#" ? "GitHub →" : "Me contacter →"}
+                  </a>
+                </div>
+              </div>
+            </motion.div>
+          ))}
         </motion.div>
       </div>
     </section>

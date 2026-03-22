@@ -54,7 +54,7 @@ export default function RootLayout({
   return (
     <html
       lang="fr"
-      className={`${heading.variable} ${body.variable} h-full antialiased dark`}
+      className={`${heading.variable} ${body.variable} h-full antialiased`}
       suppressHydrationWarning
     >
       <head>
@@ -63,9 +63,8 @@ export default function RootLayout({
             __html: `
               (function() {
                 var theme = localStorage.getItem('theme');
-                if (theme === 'light') {
-                  document.documentElement.classList.remove('dark');
-                  document.documentElement.classList.add('light');
+                if (theme === 'dark') {
+                  document.documentElement.classList.add('dark');
                 }
               })();
             `,

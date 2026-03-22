@@ -3,7 +3,6 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
-import { Moon, Sun, Menu, X } from "lucide-react";
 import { navLinks } from "@/data/portfolio";
 
 export default function Navbar() {
@@ -15,12 +14,14 @@ export default function Navbar() {
 
   useEffect(() => setMounted(true), []);
 
+  /* Scroll detection */
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  /* Scroll-spy via IntersectionObserver */
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -45,55 +46,83 @@ export default function Navbar() {
         initial={{ y: -100 }}
         animate={{ y: 0 }}
         transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-          scrolled
-            ? "bg-[var(--nav-bg)] backdrop-blur-2xl shadow-[0_1px_0_var(--border-color)] border-b border-[var(--border-color)]"
-            : "bg-transparent"
-        }`}
+        style={{
+          position: "fixed",
+          top: 0,
+          left: 0,
+          right: 0,
+          zIndex: 50,
+          height: 64,
+          background: scrolled ? "var(--nav-bg)" : "transparent",
+          backdropFilter: scrolled ? "blur(16px)" : "none",
+          WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
+          borderBottom: scrolled ? "1px solid var(--border)" : "1px solid transparent",
+          transition: "background 0.4s, border-color 0.4s, backdrop-filter 0.4s",
+        }}
       >
-        <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-          {/* Logo */}
-          <a href="#" className="flex items-center gap-2.5 group">
-            <div className="relative w-9 h-9 rounded-lg overflow-hidden flex items-center justify-center"
-              style={{
-                background: "linear-gradient(135deg, var(--neon-cyan), var(--neon-purple), var(--neon-pink))",
-              }}
-            >
-              <span className="font-[family-name:var(--font-heading)] text-sm font-bold text-white tracking-wider">
-                MA
-              </span>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                style={{
-                  background: "linear-gradient(135deg, var(--neon-pink), var(--neon-cyan), var(--neon-purple))",
-                }}
-              />
-              <span className="relative z-10 font-[family-name:var(--font-heading)] text-sm font-bold text-white tracking-wider absolute inset-0 flex items-center justify-center">
-                MA
-              </span>
-            </div>
-            <span className="font-[family-name:var(--font-heading)] text-xl font-bold tracking-tight">
-              Mathias<span className="text-gradient">.</span>
-            </span>
+        <div
+          style={{
+            maxWidth: 1120,
+            margin: "0 auto",
+            padding: "0 1.5rem",
+            height: 64,
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+          }}
+        >
+          {/* Logo — plain text, Outfit font */}
+          <a
+            href="#"
+            style={{
+              fontFamily: "var(--font-heading), 'Outfit', sans-serif",
+              fontSize: "1.15rem",
+              fontWeight: 700,
+              letterSpacing: "-0.01em",
+              color: "var(--ink)",
+              textDecoration: "none",
+            }}
+          >
+            Mathias E. AWELI
           </a>
 
-          {/* Desktop links */}
-          <div className="hidden md:flex items-center gap-1">
+          {/* Desktop links — hidden at max-width:900px */}
+          <div className="nav-links-desktop" style={{ display: "flex", alignItems: "center", gap: 4 }}>
             {navLinks.map(({ label, href }) => (
               <a
                 key={href}
                 href={href}
-                className={`relative px-3 py-2 text-sm rounded-lg transition-all duration-300 ${
-                  activeSection === href
-                    ? "text-[var(--neon-cyan)]"
-                    : "text-[var(--ink-muted)] hover:text-[var(--foreground)]"
-                }`}
+                style={{
+                  position: "relative",
+                  padding: "0.5rem 0.75rem",
+                  fontSize: "0.85rem",
+                  fontWeight: 450,
+                  color: activeSection === href ? "var(--green)" : "var(--ink-muted)",
+                  textDecoration: "none",
+                  transition: "color 0.25s",
+                  borderRadius: 6,
+                }}
+                onMouseEnter={(e) => {
+                  if (activeSection !== href) e.currentTarget.style.color = "var(--green)";
+                }}
+                onMouseLeave={(e) => {
+                  if (activeSection !== href) e.currentTarget.style.color = "var(--ink-muted)";
+                }}
               >
                 {label}
                 {activeSection === href && (
-                  <motion.div
+                  <motion.span
                     layoutId="activeNav"
-                    className="absolute bottom-0 left-1/2 -translate-x-1/2 w-5 h-0.5 rounded-full"
-                    style={{ background: "linear-gradient(90deg, var(--neon-cyan), var(--neon-purple))" }}
+                    style={{
+                      position: "absolute",
+                      bottom: 0,
+                      left: "50%",
+                      transform: "translateX(-50%)",
+                      width: 20,
+                      height: 2,
+                      borderRadius: 1,
+                      background: "var(--green)",
+                    }}
                     transition={{ type: "spring", stiffness: 380, damping: 30 }}
                   />
                 )}
@@ -101,37 +130,54 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* Right side */}
-          <div className="flex items-center gap-3">
+          {/* Right side controls */}
+          <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
+            {/* Theme toggle — circular 38px, emoji based */}
             {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
-                className="w-9 h-9 flex items-center justify-center rounded-lg border border-[var(--border-color)] hover:border-[var(--neon-cyan)] hover:shadow-[var(--glow-cyan)] transition-all duration-300"
-                aria-label="Changer de thème"
+                className="theme-toggle-btn"
+                aria-label="Changer de th&egrave;me"
               >
-                {theme === "dark" ? <Sun size={16} /> : <Moon size={16} />}
+                {theme === "dark" ? "☀️" : "🌙"}
               </button>
             )}
 
+            {/* CTA — nav-cta class, hidden on mobile */}
             <a
-              href="#contact"
-              className="hidden md:inline-flex items-center gap-2 px-4 py-2 text-sm font-semibold btn-neon"
+              href="mailto:mathiasawli@gmail.com"
+              className="nav-cta nav-cta-desktop"
             >
-              <span>Me contacter</span>
+              Me contacter →
             </a>
 
+            {/* Mobile hamburger — visible only on mobile */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
-              className="md:hidden w-9 h-9 flex items-center justify-center rounded-lg border border-[var(--border-color)] hover:border-[var(--neon-cyan)] transition-all duration-300"
+              className="nav-hamburger"
               aria-label="Menu"
+              style={{
+                display: "none",
+                width: 38,
+                height: 38,
+                borderRadius: "50%",
+                border: "1.5px solid var(--border)",
+                background: "var(--surface2)",
+                color: "var(--ink-muted)",
+                cursor: "pointer",
+                alignItems: "center",
+                justifyContent: "center",
+                fontSize: "1.2rem",
+                transition: "border-color 0.2s",
+              }}
             >
-              {mobileOpen ? <X size={18} /> : <Menu size={18} />}
+              {mobileOpen ? "✕" : "☰"}
             </button>
           </div>
         </div>
       </motion.nav>
 
-      {/* Mobile menu */}
+      {/* Mobile menu overlay */}
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
@@ -139,34 +185,69 @@ export default function Navbar() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-x-0 top-16 z-40 bg-[var(--nav-bg)] backdrop-blur-2xl border-b border-[var(--border-color)] md:hidden"
+            style={{
+              position: "fixed",
+              top: 64,
+              left: 0,
+              right: 0,
+              zIndex: 40,
+              background: "var(--nav-bg)",
+              backdropFilter: "blur(16px)",
+              WebkitBackdropFilter: "blur(16px)",
+              borderBottom: "1px solid var(--border)",
+            }}
           >
-            <div className="px-6 py-4 flex flex-col gap-1">
+            <div style={{ padding: "1rem 1.5rem", display: "flex", flexDirection: "column", gap: 4 }}>
               {navLinks.map(({ label, href }) => (
                 <a
                   key={href}
                   href={href}
                   onClick={() => setMobileOpen(false)}
-                  className={`px-4 py-3 text-sm rounded-lg transition-all duration-300 ${
-                    activeSection === href
-                      ? "text-[var(--neon-cyan)] bg-[rgba(0,240,255,0.06)]"
-                      : "text-[var(--ink-muted)] hover:text-[var(--foreground)] hover:bg-[var(--surface)]"
-                  }`}
+                  style={{
+                    padding: "0.75rem 1rem",
+                    fontSize: "0.9rem",
+                    borderRadius: 8,
+                    textDecoration: "none",
+                    transition: "color 0.25s, background 0.25s",
+                    color: activeSection === href ? "var(--green)" : "var(--ink-muted)",
+                    background: activeSection === href ? "var(--green-glow)" : "transparent",
+                  }}
                 >
                   {label}
                 </a>
               ))}
               <a
-                href="#contact"
+                href="mailto:mathiasawli@gmail.com"
                 onClick={() => setMobileOpen(false)}
-                className="mt-2 px-4 py-3 text-sm font-semibold text-center btn-neon"
+                className="nav-cta"
+                style={{ marginTop: 8, textAlign: "center" }}
               >
-                <span>Me contacter</span>
+                Me contacter →
               </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* Responsive styles for nav — hide desktop links/cta and show hamburger on mobile */}
+      <style jsx global>{`
+        .nav-links-desktop,
+        .nav-cta-desktop {
+          display: flex;
+        }
+        .nav-hamburger {
+          display: none !important;
+        }
+        @media (max-width: 900px) {
+          .nav-links-desktop,
+          .nav-cta-desktop {
+            display: none !important;
+          }
+          .nav-hamburger {
+            display: flex !important;
+          }
+        }
+      `}</style>
     </>
   );
 }
