@@ -37,17 +37,12 @@ export default function About() {
             </p>
 
             <p style={{ color: "var(--ink-muted)", lineHeight: 1.75, marginBottom: "1rem" }}>
-              De la DREAL Grand Est au Ministère de la Planification au Togo, en passant par
-              la CPES, mes expériences m&apos;ont permis d&apos;animer des ateliers
-              collaboratifs, de conduire des enquêtes terrain et de contribuer à
+              Du Ministère de la Planification au Togo, en passant par la Cellule Présidentielle
+              d&apos;Exécution et de Suivi des Projets Prioritaires (CPES) toujours au Togo,
+              à la DREAL Grand Est, France — mes expériences m&apos;ont permis d&apos;animer
+              des ateliers collaboratifs, de conduire des enquêtes terrain et de contribuer à
               l&apos;accompagnement des collectivités dans leurs démarches de planification et
               d&apos;attractivité territoriale.
-            </p>
-
-            <p style={{ color: "var(--ink-muted)", lineHeight: 1.75, marginBottom: "1rem" }}>
-              Je souhaite contribuer à l&apos;accompagnement des collectivités dans leurs
-              démarches de planification, d&apos;attractivité et de développement des
-              territoires.
             </p>
 
             <blockquote className="about-quote">
@@ -65,9 +60,9 @@ export default function About() {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">Formation</span>
+                <span className="info-key">Formation actuelle</span>
                 <span className="info-val">
-                  Master Urbanisme &amp; Aménagement — Université de Lorraine
+                  Master Expertise Statistique pour l&apos;Économie et la Finance — Université de Lorraine, Metz
                 </span>
               </motion.div>
 

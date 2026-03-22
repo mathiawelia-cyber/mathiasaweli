@@ -104,22 +104,8 @@ export default function Hero() {
               </span>
             </motion.h1>
 
-            {/* Description */}
-            <motion.p
-              {...fadeUp(0.35)}
-              className="mb-8"
-              style={{
-                fontSize: "1.05rem",
-                lineHeight: 1.7,
-                color: "var(--ink-muted)",
-                maxWidth: "32rem",
-              }}
-            >
-              <strong style={{ color: "var(--ink)" }}>
-                {personalInfo.fullName}
-              </strong>{" "}
-              — {personalInfo.description}
-            </motion.p>
+            {/* Spacer */}
+            <motion.div {...fadeUp(0.35)} className="mb-8" />
 
             {/* Buttons */}
             <motion.div
