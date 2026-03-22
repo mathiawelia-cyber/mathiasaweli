@@ -1,7 +1,7 @@
 export const personalInfo = {
   name: "Mathias E. AWELI",
   fullName: "Ewakina Mathias AWELI",
-  title: "Chargé de planification",
+  title: "Économiste & Analyste Territorial",
   email: "mathiasawli@gmail.com",
   phone: "06 27 09 18 40",
   location: "57000 Metz",
@@ -22,14 +22,21 @@ export const experiences = [
   {
     id: 1,
     role: "Chargé d'étude — Participation citoyenne",
-    company: "DREAL Grand Est",
+    company: "DREAL Grand Est · Direction Régionale de l'Environnement, de l'Aménagement et du Logement",
     location: "Grand Est",
-    period: "Avr – Août 2025",
+    period: "Avr 2025 – Août 2025",
     status: "done" as const,
     project: "État des lieux de la participation citoyenne dans la région Grand-Est",
+    tasks: [
+      "Conception et administration d'outils d'enquête : questionnaires structurés et guides d'entretiens semi-directifs",
+      "Conduite d'entretiens avec des acteurs institutionnels, associatifs et élus locaux de la région Grand Est",
+      "Analyse statistique des données collectées — traitement, synthèse et interprétation des résultats",
+      "Rédaction de notes d'analyse à destination des décideurs publics régionaux",
+      "Cartographie thématique des résultats avec QGIS",
+    ],
     description:
-      "Conception et administration d'outils d'enquête (questionnaires, guides d'entretien). Conduite d'entretiens semi-directifs avec des acteurs institutionnels et associatifs. Analyse statistique des données collectées. Rédaction de notes d'analyse à destination des décideurs publics. Cartographie des résultats (QGIS).",
-    tags: ["Enquêtes", "Entretiens semi-directifs", "Analyse statistique", "QGIS", "Notes d'analyse"],
+      "Conception et administration d'outils d'enquête. Conduite d'entretiens semi-directifs. Analyse statistique des données collectées. Rédaction de notes d'analyse. Cartographie thématique des résultats avec QGIS.",
+    tags: ["QGIS", "Enquêtes", "Entretiens semi-directifs", "Analyse statistique", "Notes décideurs"],
   },
   {
     id: 2,

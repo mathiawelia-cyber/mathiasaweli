@@ -74,7 +74,7 @@ export default function Hero() {
                     display: "inline-block",
                   }}
                 />
-                Disponible &middot; Metz, France &middot; Avril 2026
+                Disponible &middot; Beauvais, France &middot; Avril 2026
               </span>
             </motion.div>
 
