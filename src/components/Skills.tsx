@@ -7,20 +7,20 @@ import { useInView } from "framer-motion";
 import {
   BarChart3,
   Database,
-  Map,
-  FileSpreadsheet,
-  BookOpen,
+  MapPin,
+  ClipboardCheck,
   PenTool,
+  Monitor,
 } from "lucide-react";
 import { skills } from "@/data/portfolio";
 
 const iconMap: Record<string, React.ElementType> = {
   BarChart3,
   Database,
-  Map,
-  FileSpreadsheet,
-  BookOpen,
+  MapPin,
+  ClipboardCheck,
   PenTool,
+  Monitor,
 };
 
 const neonColors = [

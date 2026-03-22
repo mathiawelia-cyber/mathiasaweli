@@ -29,15 +29,15 @@ export default function About() {
         <div className="grid lg:grid-cols-[1.2fr_1fr] gap-12">
           <AnimateOnScroll>
             <p className="text-[var(--ink-muted)] leading-relaxed mb-6">
-              Diplômé en économie appliquée et en planification du développement, je me
-              spécialise dans l&apos;analyse des dynamiques territoriales à travers les outils
-              statistiques, la data science et les systèmes d&apos;information géographique.
+              Passionné par le développement local, je dispose de compétences solides dans la collecte,
+              le traitement et l&apos;analyse de données, l&apos;évaluation de politiques publiques
+              et la coordination de projets de développement.
             </p>
             <p className="text-[var(--ink-muted)] leading-relaxed mb-8">
-              Mes expériences, de la DREAL Grand Est au Ministère de la Planification au Togo,
-              m&apos;ont permis de développer une vision globale des enjeux d&apos;aménagement du
-              territoire et de politiques publiques, en croisant approches quantitatives et
-              qualitatives.
+              De la DREAL Grand Est au Ministère de la Planification au Togo, en passant par
+              la CPES, mes expériences m&apos;ont permis d&apos;animer des ateliers collaboratifs,
+              de conduire des enquêtes terrain et de contribuer à l&apos;accompagnement des
+              collectivités dans leurs démarches de planification et d&apos;attractivité territoriale.
             </p>
 
             <div className="glass p-5 rounded-xl mb-8 relative overflow-hidden">
@@ -72,7 +72,7 @@ export default function About() {
               <div className="space-y-2.5 text-sm">
                 <div className="flex items-center gap-3 text-[var(--ink-muted)]">
                   <MapPin size={15} className="text-[var(--neon-cyan)] shrink-0" />
-                  <span>Metz, France</span>
+                  <span>{personalInfo.location}</span>
                 </div>
                 <div className="flex items-center gap-3 text-[var(--ink-muted)]">
                   <Languages size={15} className="text-[var(--neon-purple)] shrink-0" />

@@ -9,6 +9,8 @@ import {
   Linkedin,
   Github,
   Download,
+  Phone,
+  MapPin,
   Send,
   CheckCircle,
   AlertCircle,
@@ -46,12 +48,14 @@ export default function Contact() {
 
   const contactLinks = [
     { icon: Mail, label: "Email", value: personalInfo.email, href: `mailto:${personalInfo.email}` },
+    { icon: Phone, label: "Téléphone", value: personalInfo.phone, href: `tel:${personalInfo.phone?.replace(/\s/g, "")}` },
+    { icon: MapPin, label: "Localisation", value: personalInfo.location, href: "#" },
     { icon: Linkedin, label: "LinkedIn", value: "Mathias AWELI", href: personalInfo.linkedin },
     { icon: Github, label: "GitHub", value: "mathiawelia-cyber", href: personalInfo.github },
     { icon: Download, label: "CV", value: "Télécharger le CV", href: assetPath("/CV_AWELI_Stage.pdf") },
   ];
 
-  const iconColors = ["var(--neon-cyan)", "var(--neon-blue)", "var(--neon-purple)", "var(--neon-pink)"];
+  const iconColors = ["var(--neon-cyan)", "var(--neon-green)", "var(--neon-pink)", "var(--neon-blue)", "var(--neon-purple)", "var(--neon-pink)"];
 
   return (
     <section id="contact" className="py-24 relative">
@@ -86,8 +90,8 @@ export default function Contact() {
           <motion.div variants={fadeUp} className="space-y-4">
             <p className="text-[var(--ink-muted)] leading-relaxed mb-6">
               N&apos;hésitez pas à me contacter pour discuter d&apos;opportunités de
-              collaboration, de stages ou de projets liés à l&apos;analyse territoriale
-              et la data science.
+              collaboration, de stages ou de projets liés au développement territorial,
+              la planification et l&apos;évaluation de politiques publiques.
             </p>
             {contactLinks.map((link, i) => (
               <a

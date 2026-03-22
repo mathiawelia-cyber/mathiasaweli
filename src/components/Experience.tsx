@@ -56,7 +56,7 @@ export default function Experience() {
                   <Briefcase
                     size={16}
                     className={
-                      xp.status === "active"
+                      (xp.status as string) === "active"
                         ? "text-[var(--neon-cyan)]"
                         : "text-[var(--ink-faint)]"
                     }
@@ -74,7 +74,7 @@ export default function Experience() {
                     </div>
                     <div className="flex items-center gap-2">
                       <span className="text-xs text-[var(--ink-faint)]">{xp.period}</span>
-                      {xp.status === "active" && (
+                      {(xp.status as string) === "active" && (
                         <span className="flex items-center gap-1.5 px-2.5 py-1 text-xs font-medium rounded-full bg-[rgba(0,240,255,0.08)] text-[var(--neon-cyan)] border border-[rgba(0,240,255,0.2)]">
                           <span className="w-1.5 h-1.5 rounded-full bg-[var(--neon-cyan)] animate-pulse" />
                           En cours
@@ -82,6 +82,11 @@ export default function Experience() {
                       )}
                     </div>
                   </div>
+                  {xp.project && (
+                    <p className="text-xs font-medium text-[var(--neon-cyan)] mb-2 opacity-80">
+                      📋 {xp.project}
+                    </p>
+                  )}
                   <p className="text-sm text-[var(--ink-muted)] mb-3">{xp.description}</p>
                   <div className="flex flex-wrap gap-1.5">
                     {xp.tags.map((tag, j) => (

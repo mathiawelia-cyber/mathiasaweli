@@ -54,9 +54,9 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
               className="font-[family-name:var(--font-heading)] text-3xl sm:text-4xl lg:text-5xl font-semibold leading-[1.1] tracking-tight mb-6 text-[var(--ink-muted)]"
             >
-              <span className="text-[var(--foreground)]">Économiste</span> &{" "}
-              <span className="text-[var(--foreground)]">Analyste</span>{" "}
-              <span className="text-gradient">Territorial</span>
+              <span className="text-[var(--foreground)]">Chargé</span>{" "}
+              <span className="text-[var(--ink-muted)]">de</span>{" "}
+              <span className="text-gradient">planification</span>
             </motion.h2>
 
             <motion.p
