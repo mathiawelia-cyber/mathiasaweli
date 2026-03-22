@@ -74,7 +74,12 @@ export default function Projects() {
                 </p>
                 <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid var(--border)" }}>
                   <span style={{ fontSize: "0.74rem", color: "var(--ink-faint)" }}>{project.tags.join(" · ")}</span>
-                  <a href={project.github || "#contact"} target={project.github ? "_blank" : undefined} rel={project.github ? "noopener noreferrer" : undefined} style={{ fontSize: "0.8rem", color: "var(--green)", fontWeight: 600, textDecoration: "none" }}>
+                  <a
+                    href={project.github && project.github !== "#" ? project.github : "#contact"}
+                    target={project.github && project.github !== "#" ? "_blank" : undefined}
+                    rel={project.github && project.github !== "#" ? "noopener noreferrer" : undefined}
+                    style={{ fontSize: "0.8rem", color: "var(--green)", fontWeight: 600, textDecoration: "none" }}
+                  >
                     {project.github && project.github !== "#" ? "GitHub →" : "Me contacter →"}
                   </a>
                 </div>
