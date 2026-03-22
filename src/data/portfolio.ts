@@ -43,12 +43,17 @@ export const experiences = [
     role: "Assistant en analyse et suivi de projets territoriaux",
     company: "Ministère de la Planification du Développement et de la Coopération",
     location: "Lomé, Togo",
-    period: "Mar – Juin 2024",
+    period: "Mar 2024 – Juin 2024",
     status: "done" as const,
-    project: "Élaboration du Schéma National d'Aménagement du territoire (SNAT-2045)",
+    project: "Élaboration du Schéma National d'Aménagement du Territoire (SNAT-2045)",
+    tasks: [
+      "Analyse et révision des livrables stratégiques du SNAT : rapport de diagnostic, scénarios de prospective, orientations et dispositif de suivi-évaluation",
+      "Animation d'ateliers de concertation multipartites (Ministres, Directeurs de cabinet, élus locaux, partenaires techniques et financiers)",
+      "Production de rapports d'activités, comptes rendus et notes de synthèse à haute valeur stratégique",
+    ],
     description:
-      "Analyse et révision des livrables du SNAT (Rapport du diagnostic, Stratégie, scénarios de prospective, orientations et programmes, Dispositif de suivi-évaluation). Participation et animation des ateliers de concertation (Ministres, Directeurs des cabinets, élus locaux, Partenaires techniques et financiers). Production de rapports d'activités et de notes de synthèses.",
-    tags: ["SNAT-2045", "Concertation", "Prospective", "Suivi-évaluation", "Rapports"],
+      "Analyse et révision des livrables stratégiques du SNAT. Animation d'ateliers de concertation multipartites. Production de rapports d'activités et notes de synthèse.",
+    tags: ["SNAT-2045", "Planification nationale", "Ateliers concertation", "Prospective territoriale"],
   },
   {
     id: 3,
