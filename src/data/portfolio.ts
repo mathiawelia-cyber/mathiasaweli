@@ -212,8 +212,8 @@ export const education = [
 ];
 
 export const certifications = [
-  "Conception de projets respectueux de l'environnement et des populations — AFD",
-  "Étude de faisabilité et évaluation environnementale et sociale — AFD",
+  "Conception de projets respectueux de l'environnement et des populations — Agence Française de Développement (AFD)",
+  "Étude de faisabilité et évaluation environnementale et sociale — Agence Française de Développement (AFD)",
 ];
 
 export const references = [
