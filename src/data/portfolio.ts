@@ -189,25 +189,24 @@ export const education = [
     degree: "Master mention Économie appliquée — Expertise statistique pour l'économie et la finance",
     school: "Université de Lorraine",
     location: "Metz, France",
-    period: "2024 – 2026",
+    detail: "Économétrie avancée, machine learning, séries temporelles, analyse des données financières et territoriales.",
   },
   {
     degree: "Master en Économie appliquée — Économie et gouvernance des territoires",
     school: "Université de Bourgogne Europe",
     location: "Dijon, France",
-    period: "2023 – 2024",
+    detail: "Aménagement, économie urbaine, diagnostic territorial, méthodes mixtes quantitatives et qualitatives.",
   },
   {
     degree: "Master Planification du développement — Planification territoriale",
     school: "Université de Kara",
     location: "Togo",
-    period: "Antérieur",
+    detail: "Économie du développement, planification publique africaine, gestion de projets.",
   },
   {
     degree: "Licence — Sciences Agronomiques",
     school: "Université de Lomé",
     location: "Togo",
-    period: "Antérieur",
     detail: "Spécialité Agroéconomie. Microéconomie, économie agricole et rurale, statistiques appliquées.",
   },
 ];

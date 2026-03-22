@@ -58,18 +58,15 @@ export default function Education() {
             <div className="flex flex-col gap-4">
               {education.map((edu) => (
                 <motion.div key={edu.degree} variants={fadeUp} className="edu-item">
-                  <p style={{ fontSize: "0.7rem", fontWeight: 600, color: "var(--gold)", letterSpacing: "0.07em", textTransform: "uppercase", marginBottom: "0.3rem" }}>
-                    {edu.period || "Antérieur"}
-                  </p>
                   <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.05rem", fontWeight: 700, marginBottom: "0.15rem" }}>
                     {edu.degree}
                   </p>
                   <p style={{ fontSize: "0.8rem", color: "var(--green)", fontWeight: 500, marginBottom: "0.4rem" }}>
                     🏛 {edu.school} · {edu.location}
                   </p>
-                  {(eduDetails[edu.degree] || (edu as { detail?: string }).detail) && (
+                  {edu.detail && (
                     <p style={{ fontSize: "0.8rem", color: "var(--ink-muted)", lineHeight: 1.65 }}>
-                      {eduDetails[edu.degree] || (edu as { detail?: string }).detail}
+                      {edu.detail}
                     </p>
                   )}
                 </motion.div>
