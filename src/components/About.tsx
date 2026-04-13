@@ -60,6 +60,13 @@ export default function About() {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <motion.div variants={fadeUp} className="info-row">
+                <span className="info-key">Stage actuel</span>
+                <span className="info-val">
+                  DDT de l&apos;Oise — Beauvais, France (Avr – Août 2026)
+                </span>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="info-row">
                 <span className="info-key">Formation actuelle</span>
                 <span className="info-val">
                   Master Expertise Statistique pour l&apos;Économie et la Finance — Université de Lorraine, Metz
