@@ -62,7 +62,7 @@ export default function About() {
               <motion.div variants={fadeUp} className="info-row">
                 <span className="info-key">Poste actuel</span>
                 <span className="info-val">
-                  DDT de l&apos;Oise — Beauvais, France (Avr – Août 2026)
+                  Chargé d&apos;études Foncier Agricole &amp; Données Territoriales — DDT de l&apos;Oise — Beauvais, France (Avr – Aujourd&apos;hui 2026)
                 </span>
               </motion.div>
 
