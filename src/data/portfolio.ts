@@ -12,13 +12,32 @@ export const personalInfo = {
   description:
     "Passionné par le développement local, je dispose de compétences solides dans la collecte, le traitement et l'analyse de données, l'évaluation de politiques publiques et la coordination de projets de développement. Je souhaite contribuer à l'accompagnement des collectivités dans leurs démarches de planification, d'attractivité et de développement des territoires.",
   stats: [
-    { value: "4+", label: "Expériences\nprofessionnelles" },
+    { value: "5+", label: "Expériences\nprofessionnelles" },
     { value: "2", label: "Pays &\ncontextes terrain" },
     { value: "6+", label: "Outils stat\n& SIG maîtrisés" },
   ],
 };
 
 export const experiences = [
+  {
+    id: 0,
+    role: "Chargé d'étude — Diagnostic foncier agricole",
+    company: "DDT de l'Oise · Direction Départementale des Territoires",
+    location: "Beauvais, France",
+    period: "Avr – Août 2026",
+    status: "active" as const,
+    project: "Projet Agricole Départemental (PAD) — Volet foncier agricole",
+    tasks: [
+      "Finalisation du diagnostic foncier agricole départemental : mise à jour des données, analyses et rédaction",
+      "Réalisation du premier tableau de bord du foncier agricole départemental",
+      "Organisation et animation de réunions avec les acteurs institutionnels et bancaires",
+      "Expérimentation sur les services écosystémiques des sols et stratégie foncière communale",
+      "Actualisation et cartographie des données d'aménagement commercial de l'Oise",
+    ],
+    description:
+      "Diagnostic foncier agricole, tableau de bord départemental, animation de réunions multi-acteurs, expérimentation services écosystémiques des sols.",
+    tags: ["Foncier agricole", "PAD", "Diagnostic territorial", "Cartographie", "Services écosystémiques"],
+  },
   {
     id: 1,
     role: "Chargé d'étude — Participation citoyenne",
