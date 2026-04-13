@@ -24,7 +24,7 @@ export const experiences = [
     role: "Chargé d'étude — Diagnostic foncier agricole",
     company: "DDT de l'Oise · Direction Départementale des Territoires",
     location: "Beauvais, France",
-    period: "Avr – Août 2026",
+    period: "Avr – Aujourd'hui",
     status: "active" as const,
     project: "Projet Agricole Départemental (PAD) — Volet foncier agricole",
     tasks: [
