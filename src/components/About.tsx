@@ -60,7 +60,7 @@ export default function About() {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">Stage actuel</span>
+                <span className="info-key">Poste actuel</span>
                 <span className="info-val">
                   DDT de l&apos;Oise — Beauvais, France (Avr – Août 2026)
                 </span>
