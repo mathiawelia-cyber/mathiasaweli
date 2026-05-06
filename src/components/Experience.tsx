@@ -3,9 +3,10 @@
 import { AnimateOnScroll, fadeUp, staggerContainer } from "@/lib/motion";
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { experiences } from "@/data/portfolio";
+import { useTranslation } from "@/i18n";
 
 export default function Experience() {
+  const t = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -14,9 +15,9 @@ export default function Experience() {
       <div className="max-w-5xl mx-auto px-6">
         {/* Header */}
         <AnimateOnScroll>
-          <p className="eyebrow">02 — Parcours professionnel</p>
+          <p className="eyebrow">{t.experience.eyebrow}</p>
           <div className="divider mb-4" />
-          <h2 className="sec-title mb-12">Exp&eacute;riences</h2>
+          <h2 className="sec-title mb-12">{t.experience.title}</h2>
         </AnimateOnScroll>
 
         {/* Experience list */}
@@ -26,9 +27,9 @@ export default function Experience() {
           animate={isInView ? "visible" : "hidden"}
           variants={staggerContainer}
         >
-          {experiences.map((xp) => (
+          {t.experience.items.map((xp, index) => (
             <motion.div
-              key={xp.id}
+              key={index}
               variants={fadeUp}
               className="grid gap-10 py-10 border-b border-[var(--border)]"
               style={{ gridTemplateColumns: "170px 1fr" }}
@@ -38,10 +39,10 @@ export default function Experience() {
                 <p className="xp-date">{xp.period}</p>
                 <span
                   className={`xp-status ${
-                    (xp.status as string) === "active" ? "s-active" : "s-done"
+                    xp.status === "active" ? "s-active" : "s-done"
                   }`}
                 >
-                  {(xp.status as string) === "active" ? "En cours" : "Termin\u00e9"}
+                  {xp.status === "active" ? t.experience.statusActive : t.experience.statusDone}
                 </span>
               </div>
 
@@ -74,9 +75,9 @@ export default function Experience() {
                 )}
 
                 {/* Task list */}
-                {(xp as { tasks?: string[] }).tasks && (
+                {xp.tasks && (
                   <ul className="mb-3 space-y-1" style={{ fontSize: "0.85rem", color: "var(--ink-muted)" }}>
-                    {((xp as { tasks?: string[] }).tasks as string[]).map(
+                    {xp.tasks.map(
                       (task, idx) => (
                         <li key={idx}>
                           <span style={{ color: "var(--green)", marginRight: "0.4rem" }}>&rarr;</span>

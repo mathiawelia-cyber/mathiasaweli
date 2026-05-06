@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { education, certifications, references } from "@/data/portfolio";
+import { useTranslation } from "@/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -14,18 +14,10 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const eduDetails: Record<string, string> = {
-  "Master mention Économie appliquée — Expertise statistique pour l'économie et la finance":
-    "Économétrie avancée, machine learning, séries temporelles, analyse des données financières et territoriales.",
-  "Master en Économie appliquée — Économie et gouvernance des territoires":
-    "Aménagement, économie urbaine, diagnostic territorial, méthodes mixtes quantitatives et qualitatives.",
-  "Master Planification du développement — Planification territoriale":
-    "Économie du développement, planification publique africaine, gestion de projets.",
-};
-
 export default function Education() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslation();
 
   return (
     <section id="education" className="section-alt" style={{ padding: "clamp(4rem,8vw,6.5rem) 0" }}>
@@ -36,10 +28,10 @@ export default function Education() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="eyebrow">05 — Formation & certifications</p>
+          <p className="eyebrow">{t.education.eyebrow}</p>
           <div className="divider" />
           <h2 className="sec-title">
-            Parcours<br /><em style={{ color: "var(--green)", fontStyle: "italic" }}>académique</em>
+            {t.education.title1}<br /><em style={{ color: "var(--green)", fontStyle: "italic" }}>{t.education.titleEm}</em>
           </h2>
         </motion.div>
 
@@ -53,10 +45,10 @@ export default function Education() {
           {/* Left: Formations */}
           <div>
             <p style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-faint)", marginBottom: "1.1rem" }}>
-              Formations
+              {t.education.formationsTitle}
             </p>
             <div className="flex flex-col gap-4">
-              {education.map((edu) => (
+              {t.education.items.map((edu) => (
                 <motion.div key={edu.degree} variants={fadeUp} className="edu-item">
                   <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.05rem", fontWeight: 700, marginBottom: "0.15rem" }}>
                     {edu.degree}
@@ -77,10 +69,10 @@ export default function Education() {
           {/* Right: Certifications + References */}
           <div>
             <p style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-faint)", marginBottom: "1.1rem" }}>
-              Certifications
+              {t.education.certsTitle}
             </p>
             <div className="flex flex-col gap-4">
-              {certifications.map((cert, i) => {
+              {t.education.certifications.map((cert, i) => {
                 const parts = cert.split(" — ");
                 return (
                   <motion.div key={cert} variants={fadeUp} className="cert-item">
@@ -96,10 +88,10 @@ export default function Education() {
 
             {/* References */}
             <p style={{ fontSize: "0.72rem", fontWeight: 700, textTransform: "uppercase", letterSpacing: "0.12em", color: "var(--ink-faint)", marginTop: "2.5rem", marginBottom: "1.1rem" }}>
-              Références
+              {t.education.refsTitle}
             </p>
             <div className="flex flex-col gap-4">
-              {references.map((r) => (
+              {t.education.references.map((r) => (
                 <motion.div key={r.name} variants={fadeUp} className="ref-card">
                   <p style={{ fontFamily: "var(--font-heading)", fontSize: "1.05rem", fontWeight: 700, marginBottom: "0.2rem" }}>
                     {r.name}

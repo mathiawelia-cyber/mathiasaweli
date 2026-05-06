@@ -3,7 +3,8 @@
 import { useState, useEffect } from "react";
 import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
-import { navLinks } from "@/data/portfolio";
+import { useLanguage } from "@/lib/language-provider";
+import { useTranslation } from "@/i18n";
 
 export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -11,6 +12,8 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState("");
   const { theme, setTheme } = useTheme();
   const [mounted, setMounted] = useState(false);
+  const { lang, setLang } = useLanguage();
+  const t = useTranslation();
 
   useEffect(() => setMounted(true), []);
 
@@ -33,12 +36,12 @@ export default function Navbar() {
       },
       { rootMargin: "-40% 0px -55% 0px" }
     );
-    navLinks.forEach(({ href }) => {
+    t.nav.links.forEach(({ href }) => {
       const el = document.querySelector(href);
       if (el) observer.observe(el);
     });
     return () => observer.disconnect();
-  }, []);
+  }, [t.nav.links]);
 
   return (
     <>
@@ -71,7 +74,7 @@ export default function Navbar() {
             justifyContent: "space-between",
           }}
         >
-          {/* Logo — plain text, Outfit font */}
+          {/* Logo */}
           <a
             href="#"
             style={{
@@ -86,9 +89,9 @@ export default function Navbar() {
             Mathias E. AWELI
           </a>
 
-          {/* Desktop links — hidden at max-width:900px */}
+          {/* Desktop links */}
           <div className="nav-links-desktop" style={{ display: "flex", alignItems: "center", gap: 4 }}>
-            {navLinks.map(({ label, href }) => (
+            {t.nav.links.map(({ label, href }) => (
               <a
                 key={href}
                 href={href}
@@ -132,30 +135,78 @@ export default function Navbar() {
 
           {/* Right side controls */}
           <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-            {/* Theme toggle — circular 38px, emoji based */}
+            {/* Language toggle — FR | EN */}
+            {mounted && (
+              <div
+                style={{
+                  display: "flex",
+                  borderRadius: 6,
+                  overflow: "hidden",
+                  border: "1.5px solid var(--border)",
+                }}
+              >
+                <button
+                  onClick={() => setLang("fr")}
+                  style={{
+                    padding: "0.3rem 0.55rem",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.04em",
+                    border: "none",
+                    cursor: "pointer",
+                    transition: "all 0.25s",
+                    fontFamily: "var(--font-body)",
+                    background: lang === "fr" ? "var(--green)" : "transparent",
+                    color: lang === "fr" ? "#fff" : "var(--ink-muted)",
+                  }}
+                >
+                  FR
+                </button>
+                <button
+                  onClick={() => setLang("en")}
+                  style={{
+                    padding: "0.3rem 0.55rem",
+                    fontSize: "0.72rem",
+                    fontWeight: 700,
+                    letterSpacing: "0.04em",
+                    border: "none",
+                    borderLeft: "1px solid var(--border)",
+                    cursor: "pointer",
+                    transition: "all 0.25s",
+                    fontFamily: "var(--font-body)",
+                    background: lang === "en" ? "var(--green)" : "transparent",
+                    color: lang === "en" ? "#fff" : "var(--ink-muted)",
+                  }}
+                >
+                  EN
+                </button>
+              </div>
+            )}
+
+            {/* Theme toggle */}
             {mounted && (
               <button
                 onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
                 className="theme-toggle-btn"
-                aria-label="Changer de th&egrave;me"
+                aria-label={t.nav.themeLabel}
               >
                 {theme === "dark" ? "☀️" : "🌙"}
               </button>
             )}
 
-            {/* CTA — nav-cta class, hidden on mobile */}
+            {/* CTA */}
             <a
               href="mailto:mathiasawli@gmail.com"
               className="nav-cta nav-cta-desktop"
             >
-              Me contacter →
+              {t.nav.cta}
             </a>
 
-            {/* Mobile hamburger — visible only on mobile */}
+            {/* Mobile hamburger */}
             <button
               onClick={() => setMobileOpen(!mobileOpen)}
               className="nav-hamburger"
-              aria-label="Menu"
+              aria-label={t.nav.menuLabel}
               style={{
                 display: "none",
                 width: 38,
@@ -198,7 +249,7 @@ export default function Navbar() {
             }}
           >
             <div style={{ padding: "1rem 1.5rem", display: "flex", flexDirection: "column", gap: 4 }}>
-              {navLinks.map(({ label, href }) => (
+              {t.nav.links.map(({ label, href }) => (
                 <a
                   key={href}
                   href={href}
@@ -222,14 +273,14 @@ export default function Navbar() {
                 className="nav-cta"
                 style={{ marginTop: 8, textAlign: "center" }}
               >
-                Me contacter →
+                {t.nav.cta}
               </a>
             </div>
           </motion.div>
         )}
       </AnimatePresence>
 
-      {/* Responsive styles for nav — hide desktop links/cta and show hamburger on mobile */}
+      {/* Responsive styles */}
       <style jsx global>{`
         .nav-links-desktop,
         .nav-cta-desktop {

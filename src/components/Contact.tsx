@@ -3,6 +3,7 @@
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, FormEvent } from "react";
 import { assetPath } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -14,17 +15,11 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const contactRows = [
-  { icon: "✉️", label: "Email", value: "mathiasawli@gmail.com", href: "mailto:mathiasawli@gmail.com" },
-  { icon: "💼", label: "LinkedIn", value: "@mathiasAWELI", href: "https://www.linkedin.com/in/mathias-aweli/" },
-  { icon: "🐙", label: "GitHub", value: "mathiawelia-cyber", href: "https://github.com/mathiawelia-cyber" },
-  { icon: "📄", label: "Curriculum Vitae", value: "Télécharger mon CV (PDF)", href: "__CV__" },
-];
-
 export default function Contact() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const t = useTranslation();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -78,21 +73,19 @@ export default function Contact() {
           {/* Left side — info + contact rows */}
           <motion.div variants={fadeUp}>
             <p style={{ fontSize: "0.72rem", fontWeight: 600, letterSpacing: "0.16em", textTransform: "uppercase", color: "var(--green-l)", marginBottom: "0.5rem" }}>
-              06 — Contact
+              {t.contact.eyebrow}
             </p>
             <div style={{ width: 36, height: 2, background: "var(--green-l)", opacity: 0.5, marginBottom: "1.5rem" }} />
             <h2 style={{ fontFamily: "var(--font-heading)", fontSize: "clamp(2.5rem,5vw,4rem)", fontWeight: 700, lineHeight: 1.1, marginBottom: "1.5rem", color: "#fff" }}>
-              Travaillons<br /><em style={{ color: "var(--green-l)", fontStyle: "italic" }}>ensemble.</em>
+              {t.contact.title1}<br /><em style={{ color: "var(--green-l)", fontStyle: "italic" }}>{t.contact.titleEm}</em>
             </h2>
             <p style={{ color: "rgba(255,255,255,0.5)", fontSize: "0.93rem", lineHeight: 1.85, marginBottom: "2rem" }}>
-              Ouvert aux opportunités professionnelles, collaborations académiques et échanges autour
-              de l&apos;économie territoriale, du diagnostic territorial et de l&apos;analyse de données
-              au service des politiques publiques.
+              {t.contact.subtitle}
             </p>
 
             {/* Contact rows */}
             <div className="flex flex-col gap-3">
-              {contactRows.map((row) => (
+              {t.contact.rows.map((row) => (
                 <a
                   key={row.label}
                   href={row.href === "__CV__" ? assetPath("/CV_AWELI_Stage.pdf") : row.href}
@@ -119,38 +112,38 @@ export default function Contact() {
           <motion.div variants={fadeUp}>
             <div style={{ background: "rgba(255,255,255,0.03)", border: "1px solid rgba(255,255,255,0.08)", borderRadius: 8, padding: "2rem" }}>
               <h3 style={{ fontFamily: "var(--font-heading)", fontSize: "1.5rem", fontWeight: 700, color: "#fff", marginBottom: "1.5rem" }}>
-                Envoyez-moi un message
+                {t.contact.formTitle}
               </h3>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
                 <div className="grid grid-cols-2 gap-4">
                   <div>
                     <label style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", marginBottom: 4, display: "block" }}>
-                      Nom complet
+                      {t.contact.nameLabel}
                     </label>
-                    <input type="text" name="name" required placeholder="Votre nom" style={inputStyle} />
+                    <input type="text" name="name" required placeholder={t.contact.namePlaceholder} style={inputStyle} />
                   </div>
                   <div>
                     <label style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", marginBottom: 4, display: "block" }}>
-                      Email
+                      {t.contact.emailLabel}
                     </label>
-                    <input type="email" name="email" required placeholder="votre@email.com" style={inputStyle} />
+                    <input type="email" name="email" required placeholder={t.contact.emailPlaceholder} style={inputStyle} />
                   </div>
                 </div>
                 <div>
                   <label style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", marginBottom: 4, display: "block" }}>
-                    Objet
+                    {t.contact.subjectLabel}
                   </label>
-                  <input type="text" name="subject" required placeholder="Objet du message" style={inputStyle} />
+                  <input type="text" name="subject" required placeholder={t.contact.subjectPlaceholder} style={inputStyle} />
                 </div>
                 <div>
                   <label style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", marginBottom: 4, display: "block" }}>
-                    Message
+                    {t.contact.messageLabel}
                   </label>
                   <textarea
                     name="message"
                     rows={5}
                     required
-                    placeholder="Votre message..."
+                    placeholder={t.contact.messagePlaceholder}
                     style={{ ...inputStyle, resize: "none" as const }}
                   />
                 </div>
@@ -173,12 +166,12 @@ export default function Contact() {
                   }}
                 >
                   {status === "sending"
-                    ? "Envoi en cours..."
+                    ? t.contact.sending
                     : status === "sent"
-                    ? "✓ Message envoyé !"
+                    ? t.contact.sent
                     : status === "error"
-                    ? "Erreur, réessayez"
-                    : "Envoyer le message →"}
+                    ? t.contact.error
+                    : t.contact.send}
                 </button>
               </form>
             </div>

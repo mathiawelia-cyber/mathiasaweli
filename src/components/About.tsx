@@ -2,12 +2,13 @@
 
 import { motion } from "framer-motion";
 import { AnimateOnScroll, fadeUp, staggerContainer } from "@/lib/motion";
-import { personalInfo, strengths } from "@/data/portfolio";
+import { useTranslation } from "@/i18n";
 import { assetPath } from "@/lib/utils";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
 export default function About() {
+  const t = useTranslation();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -20,34 +21,26 @@ export default function About() {
         >
           {/* ── Left: About Text ── */}
           <AnimateOnScroll className="about-text">
-            <p className="eyebrow">01 — À propos</p>
+            <p className="eyebrow">{t.about.eyebrow}</p>
             <div className="divider" />
             <h2 className="sec-title">
-              Ancré dans le{" "}
+              {t.about.title1}{" "}
               <br />
-              <em style={{ color: "var(--green)", fontStyle: "italic" }}>terrain</em>, armé
+              <em style={{ color: "var(--green)", fontStyle: "italic" }}>{t.about.titleEm}</em>{t.about.title2}
               <br />
-              des données
+              {t.about.title3}
             </h2>
 
             <p style={{ color: "var(--ink-muted)", lineHeight: 1.75, marginBottom: "1rem" }}>
-              Passionné par le développement local, je dispose de compétences solides dans la
-              collecte, le traitement et l&apos;analyse de données, l&apos;évaluation de
-              politiques publiques et la coordination de projets de développement.
+              {t.about.paragraph1}
             </p>
 
             <p style={{ color: "var(--ink-muted)", lineHeight: 1.75, marginBottom: "1rem" }}>
-              Du Ministère de la Planification au Togo, en passant par la Cellule Présidentielle
-              d&apos;Exécution et de Suivi des Projets Prioritaires (CPES) toujours au Togo,
-              à la DREAL Grand Est, France — mes expériences m&apos;ont permis d&apos;animer
-              des ateliers collaboratifs, de conduire des enquêtes terrain et de contribuer à
-              l&apos;accompagnement des collectivités dans leurs démarches de planification et
-              d&apos;attractivité territoriale.
+              {t.about.paragraph2}
             </p>
 
             <blockquote className="about-quote">
-              &ldquo;Donner du sens aux données pour éclairer les décisions publiques et
-              accompagner les territoires dans leur développement durable.&rdquo;
+              &ldquo;{t.about.quote}&rdquo;
             </blockquote>
           </AnimateOnScroll>
 
@@ -60,45 +53,45 @@ export default function About() {
           >
             <div style={{ display: "flex", flexDirection: "column", gap: "0" }}>
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">Poste actuel</span>
+                <span className="info-key">{t.about.labels.currentPosition}</span>
                 <span className="info-val">
-                  Chargé d&apos;études Foncier Agricole &amp; Données Territoriales — DDT de l&apos;Oise — Beauvais, France (Avr – Aujourd&apos;hui 2026)
+                  {t.about.labels.currentPositionValue}
                 </span>
               </motion.div>
 
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">Formation actuelle</span>
+                <span className="info-key">{t.about.labels.currentEducation}</span>
                 <span className="info-val">
-                  Master Expertise Statistique pour l&apos;Économie et la Finance — Université de Lorraine, Metz
+                  {t.about.labels.currentEducationValue}
                 </span>
               </motion.div>
 
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">Email</span>
+                <span className="info-key">{t.about.labels.email}</span>
                 <span className="info-val">
-                  <a href={`mailto:${personalInfo.email}`} style={{ color: "var(--green)", textDecoration: "none" }}>
-                    {personalInfo.email}
+                  <a href={`mailto:${t.personalInfo.email}`} style={{ color: "var(--green)", textDecoration: "none" }}>
+                    {t.personalInfo.email}
                   </a>
                 </span>
               </motion.div>
 
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">Langues</span>
+                <span className="info-key">{t.about.labels.languages}</span>
                 <span className="info-val">
-                  {personalInfo.languages.join(" · ")}
+                  {t.personalInfo.languages.join(" · ")}
                 </span>
               </motion.div>
 
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">Mobilité</span>
-                <span className="info-val">{personalInfo.mobility}</span>
+                <span className="info-key">{t.about.labels.mobility}</span>
+                <span className="info-val">{t.personalInfo.mobility}</span>
               </motion.div>
 
               <motion.div variants={fadeUp} className="info-row">
-                <span className="info-key">LinkedIn</span>
+                <span className="info-key">{t.about.labels.linkedin}</span>
                 <span className="info-val">
                   <a
-                    href={personalInfo.linkedin}
+                    href={t.personalInfo.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
                     style={{ color: "var(--green)", textDecoration: "none" }}
@@ -116,7 +109,7 @@ export default function About() {
                 rel="noopener noreferrer"
                 className="btn btn-primary"
               >
-                Télécharger le CV (PDF) →
+                {t.about.labels.downloadCV}
               </a>
             </motion.div>
           </motion.div>

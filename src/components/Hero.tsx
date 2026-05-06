@@ -1,7 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { personalInfo } from "@/data/portfolio";
+import { useTranslation } from "@/i18n";
 import Image from "next/image";
 import { assetPath } from "@/lib/utils";
 
@@ -12,6 +12,8 @@ const fadeUp = (delay: number) => ({
 });
 
 export default function Hero() {
+  const t = useTranslation();
+
   return (
     <section
       className="relative flex items-center overflow-hidden"
@@ -74,7 +76,7 @@ export default function Hero() {
                     display: "inline-block",
                   }}
                 />
-                Disponible &middot; Beauvais, France &middot; Avril 2026
+                {t.hero.available}
               </span>
             </motion.div>
 
@@ -90,9 +92,9 @@ export default function Hero() {
                 letterSpacing: "-0.02em",
               }}
             >
-              <span style={{ color: "var(--ink-faint)" }}>Économiste</span>
+              <span style={{ color: "var(--ink-faint)" }}>{t.hero.title1}</span>
               <br />
-              <span style={{ color: "var(--ink)" }}>&amp; Analyste</span>
+              <span style={{ color: "var(--ink)" }}>{t.hero.title2}</span>
               <br />
               <span
                 style={{
@@ -100,7 +102,7 @@ export default function Hero() {
                   fontStyle: "italic",
                 }}
               >
-                Territorial
+                {t.hero.title3}
               </span>
             </motion.h1>
 
@@ -116,27 +118,27 @@ export default function Hero() {
                 href="#projects"
                 className="btn-primary inline-flex items-center gap-2 px-5 py-2.5 text-sm font-semibold rounded-md transition-colors"
               >
-                Voir mes projets &rarr;
+                {t.hero.seeProjects}
               </a>
               <a
                 href="#contact"
                 className="btn-ghost inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-md transition-colors"
               >
-                Me contacter
+                {t.hero.contactMe}
               </a>
               <a
-                href={personalInfo.linkedin}
+                href={t.personalInfo.linkedin}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-ghost inline-flex items-center gap-2 px-5 py-2.5 text-sm font-medium rounded-md transition-colors"
               >
-                LinkedIn &#8599;
+                {t.hero.linkedin}
               </a>
             </motion.div>
 
             {/* Stats */}
             <motion.div {...fadeUp(0.6)} className="flex gap-10">
-              {personalInfo.stats.map((stat) => (
+              {t.hero.stats.map((stat) => (
                 <div key={stat.label}>
                   <div
                     style={{
@@ -182,7 +184,7 @@ export default function Hero() {
             >
               <Image
                 src={assetPath("/Photo_de_profil_AWELI.png")}
-                alt={personalInfo.name}
+                alt={t.personalInfo.name}
                 width={340}
                 height={453}
                 className="object-cover w-full h-full"

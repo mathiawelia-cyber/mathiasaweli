@@ -3,6 +3,8 @@
 import { motion } from "framer-motion";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
+import { useTranslation } from "@/i18n";
+import { useLanguage } from "@/lib/language-provider";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -14,7 +16,7 @@ const stagger = {
   visible: { transition: { staggerChildren: 0.08 } },
 };
 
-const skillsData = [
+const skillsDataFR = [
   {
     icon: "📊",
     title: "Statistiques & Économétrie",
@@ -87,9 +89,85 @@ const skillsData = [
   },
 ];
 
+const skillsDataEN = [
+  {
+    icon: "📊",
+    title: "Statistics & Econometrics",
+    pills: [
+      { label: "R / RStudio", hi: true },
+      { label: "Stata", hi: true },
+      { label: "EViews", hi: true },
+      { label: "Probit / Logit" },
+      { label: "Ordered Probit" },
+      { label: "Time series" },
+      { label: "Descriptive analysis" },
+    ],
+  },
+  {
+    icon: "🗺️",
+    title: "GIS & Mapping",
+    pills: [
+      { label: "QGIS", hi: true },
+      { label: "Spatial analysis" },
+      { label: "Thematic mapping" },
+      { label: "QGIS Dashboard" },
+      { label: "OpenLayers" },
+    ],
+  },
+  {
+    icon: "🤖",
+    title: "Data Science & ML",
+    pills: [
+      { label: "Python", hi: true },
+      { label: "XGBoost", hi: true },
+      { label: "Random Forest" },
+      { label: "K-Means" },
+      { label: "Streamlit" },
+      { label: "Pandas" },
+    ],
+  },
+  {
+    icon: "🔍",
+    title: "Research Methods",
+    pills: [
+      { label: "Territorial diagnosis", hi: true },
+      { label: "Quantitative surveys" },
+      { label: "Semi-structured interviews" },
+      { label: "Focus groups" },
+      { label: "Public policy evaluation" },
+      { label: "LimeSurvey · KoBoToolbox" },
+    ],
+  },
+  {
+    icon: "✍️",
+    title: "Writing & Communication",
+    pills: [
+      { label: "Policy reports", hi: true },
+      { label: "Synthesis notes", hi: true },
+      { label: "Workshop reports" },
+      { label: "Advanced Office Suite" },
+      { label: "Written & oral fluency" },
+    ],
+  },
+  {
+    icon: "🌍",
+    title: "Territorial Development",
+    pills: [
+      { label: "Agricultural land", hi: true },
+      { label: "Economic attractiveness" },
+      { label: "Multi-stakeholder management" },
+      { label: "Workshop facilitation" },
+      { label: "Local authority support" },
+    ],
+  },
+];
+
 export default function Skills() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslation();
+  const { lang } = useLanguage();
+  const skillsData = lang === "en" ? skillsDataEN : skillsDataFR;
 
   return (
     <section id="skills" className="section-alt" style={{ padding: "clamp(4rem,8vw,6.5rem) 0" }}>
@@ -100,9 +178,9 @@ export default function Skills() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="eyebrow">03 — Outils & méthodes</p>
+          <p className="eyebrow">{t.skills.eyebrow}</p>
           <div className="divider" />
-          <h2 className="sec-title">Compétences</h2>
+          <h2 className="sec-title">{t.skills.title}</h2>
         </motion.div>
 
         <motion.div

@@ -2,9 +2,9 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
-import { projects } from "@/data/portfolio";
 import Image from "next/image";
 import { assetPath } from "@/lib/utils";
+import { useTranslation } from "@/i18n";
 
 const fadeUp = {
   hidden: { opacity: 0, y: 24 },
@@ -19,6 +19,7 @@ const stagger = {
 export default function Projects() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const t = useTranslation();
 
   return (
     <section id="projects" style={{ background: "var(--bg)", padding: "clamp(4rem,8vw,6.5rem) 0" }}>
@@ -29,9 +30,9 @@ export default function Projects() {
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
         >
-          <p className="eyebrow">04 — Réalisations</p>
+          <p className="eyebrow">{t.projects.eyebrow}</p>
           <div className="divider" />
-          <h2 className="sec-title">Projets</h2>
+          <h2 className="sec-title">{t.projects.title}</h2>
         </motion.div>
 
         <motion.div
@@ -41,7 +42,7 @@ export default function Projects() {
           variants={stagger}
           className="grid grid-cols-2 gap-6 proj-grid-custom"
         >
-          {projects.map((project) => (
+          {t.projects.items.map((project) => (
             <motion.div
               key={project.id}
               variants={fadeUp}
@@ -80,7 +81,7 @@ export default function Projects() {
                     rel={project.github && project.github !== "#" ? "noopener noreferrer" : undefined}
                     style={{ fontSize: "0.8rem", color: "var(--green)", fontWeight: 600, textDecoration: "none" }}
                   >
-                    {project.github && project.github !== "#" ? "GitHub →" : "Me contacter →"}
+                    {project.github && project.github !== "#" ? t.projects.githubLink : t.projects.contactLink}
                   </a>
                 </div>
               </div>
