@@ -104,7 +104,7 @@ export default function About() {
 
             <motion.div variants={fadeUp} style={{ marginTop: "2.5rem" }}>
               <a
-                href={assetPath("/CV_AWELI_Stage.pdf")}
+                href={assetPath("/CV_Mathias_AWELI.pdf")}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn btn-primary"

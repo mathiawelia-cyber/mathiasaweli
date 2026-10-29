@@ -13,7 +13,7 @@ export const fr = {
     menuLabel: "Menu",
   },
   hero: {
-    available: "Disponible \u00b7 Beauvais, France \u00b7 Avril 2026",
+    available: "Disponible \u00b7 Beauvais, France",
     title1: "\u00c9conomiste",
     title2: "& Analyste",
     title3: "Territorial",
@@ -33,18 +33,18 @@ export const fr = {
     title2: ", arm\u00e9",
     title3: "des donn\u00e9es",
     paragraph1:
-      "Passionn\u00e9 par le d\u00e9veloppement local, je dispose de comp\u00e9tences solides dans la collecte, le traitement et l\u2019analyse de donn\u00e9es, l\u2019\u00e9valuation de politiques publiques et la coordination de projets de d\u00e9veloppement.",
+      "Form\u00e9 \u00e0 l\u2019analyse territoriale et des politiques publiques, je mobilise les donn\u00e9es, les diagnostics socio-\u00e9conomiques et l\u2019observation territoriale pour identifier les dynamiques, les besoins et les d\u00e9s\u00e9quilibres d\u2019un territoire.",
     paragraph2:
-      "Du Minist\u00e8re de la Planification au Togo, en passant par la Cellule Pr\u00e9sidentielle d\u2019Ex\u00e9cution et de Suivi des Projets Prioritaires (CPES) toujours au Togo, \u00e0 la DREAL Grand Est, France \u2014 mes exp\u00e9riences m\u2019ont permis d\u2019animer des ateliers collaboratifs, de conduire des enqu\u00eates terrain et de contribuer \u00e0 l\u2019accompagnement des collectivit\u00e9s dans leurs d\u00e9marches de planification et d\u2019attractivit\u00e9 territoriale.",
+      "De la DDT de l\u2019Oise \u00e0 la DREAL Grand Est, jusqu\u2019au Minist\u00e8re de la Planification au Togo, mon parcours m\u2019a conduit \u00e0 travailler sur des probl\u00e9matiques de d\u00e9veloppement territorial, d\u2019emploi, de foncier et de planification. Habitu\u00e9 \u00e0 conduire des \u00e9tudes, produire des outils d\u2019aide \u00e0 la d\u00e9cision et travailler avec diff\u00e9rents acteurs, je souhaite aujourd\u2019hui mettre ces comp\u00e9tences au service du d\u00e9veloppement de l\u2019emploi et de l\u2019accompagnement des territoires.",
     quote:
       "Donner du sens aux donn\u00e9es pour \u00e9clairer les d\u00e9cisions publiques et accompagner les territoires dans leur d\u00e9veloppement durable.",
     labels: {
       currentPosition: "Poste actuel",
       currentPositionValue:
-        "Charg\u00e9 d\u2019\u00e9tudes Foncier Agricole & Donn\u00e9es Territoriales \u2014 DDT de l\u2019Oise \u2014 Beauvais, France (Avr \u2013 Aujourd\u2019hui 2026)",
-      currentEducation: "Formation actuelle",
+        "Charg\u00e9 d\u2019\u00e9tude \u2014 DDT de l\u2019Oise \u2014 Beauvais, France (Avr \u2013 Nov 2026)",
+      currentEducation: "Formation",
       currentEducationValue:
-        "Master Expertise Statistique pour l\u2019\u00c9conomie et la Finance \u2014 Universit\u00e9 de Lorraine, Metz",
+        "Master \u00c9conomie appliqu\u00e9e \u2014 Expertise statistique pour l\u2019\u00e9conomie \u2014 Universit\u00e9 de Lorraine, Metz",
       email: "Email",
       languages: "Langues",
       mobility: "Mobilit\u00e9",
@@ -59,27 +59,28 @@ export const fr = {
     statusDone: "Termin\u00e9",
     items: [
       {
-        role: "Charg\u00e9 d\u2019\u00e9tude \u2014 Diagnostic foncier agricole",
+        role: "Charg\u00e9 d\u2019\u00e9tude \u2014 Foncier agricole",
         company:
           "DDT de l\u2019Oise \u00b7 Direction D\u00e9partementale des Territoires",
         location: "Beauvais, France",
-        period: "Avr \u2013 Aujourd\u2019hui",
+        period: "Avr \u2013 Nov 2026",
         status: "active" as const,
         project:
           "Projet Agricole D\u00e9partemental (PAD) \u2014 Volet foncier agricole",
         tasks: [
-          "Finalisation du diagnostic foncier agricole d\u00e9partemental : mise \u00e0 jour des donn\u00e9es, analyses et r\u00e9daction",
-          "R\u00e9alisation du premier tableau de bord du foncier agricole d\u00e9partemental",
-          "Organisation et animation de r\u00e9unions avec les acteurs institutionnels et bancaires",
-          "Exp\u00e9rimentation sur les services \u00e9cosyst\u00e9miques des sols et strat\u00e9gie fonci\u00e8re communale",
-          "Actualisation et cartographie des donn\u00e9es d\u2019am\u00e9nagement commercial de l\u2019Oise",
+          "Contribution au diagnostic territorial et foncier \u00e0 l\u2019\u00e9chelle d\u00e9partementale",
+          "Structuration, croisement et analyse de donn\u00e9es permettant d\u2019objectiver les dynamiques fonci\u00e8res",
+          "Contribution \u00e0 la construction d\u2019un tableau de bord d\u00e9partemental sur l\u2019\u00e9volution du foncier agricole",
+          "Mise en place d\u2019outils de datavisualisation sur la consommation fonci\u00e8re et les projets li\u00e9s \u00e0 l\u2019am\u00e9nagement du territoire",
+          "Production de notes d\u2019analyse et d\u2019\u00e9l\u00e9ments d\u2019aide \u00e0 la d\u00e9cision \u00e0 destination des acteurs publics",
+          "Participation \u00e0 des r\u00e9unions avec des acteurs institutionnels autour des enjeux fonciers et territoriaux",
         ],
         tags: [
           "Foncier agricole",
           "PAD",
           "Diagnostic territorial",
-          "Cartographie",
-          "Services \u00e9cosyst\u00e9miques",
+          "Tableau de bord",
+          "Datavisualisation",
         ],
       },
       {
@@ -92,11 +93,11 @@ export const fr = {
         project:
           "\u00c9tat des lieux de la participation citoyenne dans la r\u00e9gion Grand-Est",
         tasks: [
-          "Conception et administration d\u2019outils d\u2019enqu\u00eate : questionnaires structur\u00e9s et guides d\u2019entretiens semi-directifs",
-          "Conduite d\u2019entretiens avec des acteurs institutionnels, associatifs et \u00e9lus locaux de la r\u00e9gion Grand Est",
-          "Analyse statistique des donn\u00e9es collect\u00e9es \u2014 traitement, synth\u00e8se et interpr\u00e9tation des r\u00e9sultats",
-          "R\u00e9daction de notes d\u2019analyse \u00e0 destination des d\u00e9cideurs publics r\u00e9gionaux",
-          "Cartographie th\u00e9matique des r\u00e9sultats avec QGIS",
+          "Conception d\u2019un protocole d\u2019enqu\u00eate combinant questionnaires et entretiens semi-directifs",
+          "Collecte, traitement et analyse des donn\u00e9es recueillies",
+          "Analyse des r\u00e9sultats et identification des dynamiques territoriales",
+          "R\u00e9daction d\u2019une note d\u2019analyse destin\u00e9e aux d\u00e9cideurs",
+          "Cartographie des r\u00e9sultats sous QGIS pour visualiser les dynamiques territoriales",
         ],
         tags: [
           "QGIS",
@@ -104,6 +105,29 @@ export const fr = {
           "Entretiens semi-directifs",
           "Analyse statistique",
           "Notes d\u00e9cideurs",
+        ],
+      },
+      {
+        role: "Charg\u00e9 d\u2019\u00e9tude \u2014 Attractivit\u00e9 \u00e9conomique",
+        company: "Commune d\u2019Ago\u00e8-Nyiv\u00e9 2",
+        location: "Togo",
+        period: "Avr \u2013 Sept 2024",
+        status: "done" as const,
+        project:
+          "Diagnostic territorial sur les facteurs d\u2019attractivit\u00e9 \u00e9conomique",
+        tasks: [
+          "R\u00e9alisation d\u2019un diagnostic territorial consacr\u00e9 aux facteurs d\u2019attractivit\u00e9 \u00e9conomique",
+          "Conception et administration d\u2019un questionnaire aupr\u00e8s des entreprises et des habitants",
+          "Analyse des dynamiques \u00e9conomiques, sociales, environnementales et d\u00e9mographiques",
+          "Identification des leviers d\u2019attractivit\u00e9 et de d\u00e9veloppement territorial",
+          "\u00c9laboration d\u2019un rapport strat\u00e9gique",
+          "Pr\u00e9sentation des r\u00e9sultats et des propositions aux d\u00e9cideurs locaux",
+        ],
+        tags: [
+          "Diagnostic territorial",
+          "Attractivit\u00e9 \u00e9conomique",
+          "Enqu\u00eates",
+          "Rapport strat\u00e9gique",
         ],
       },
       {
@@ -116,9 +140,12 @@ export const fr = {
         project:
           "\u00c9laboration du Sch\u00e9ma National d\u2019Am\u00e9nagement du Territoire (SNAT-2045)",
         tasks: [
-          "Analyse et r\u00e9vision des livrables strat\u00e9giques du SNAT : rapport de diagnostic, sc\u00e9narios de prospective, orientations et dispositif de suivi-\u00e9valuation",
-          "Animation d\u2019ateliers de concertation multipartites (Ministres, Directeurs de cabinet, \u00e9lus locaux, partenaires techniques et financiers)",
-          "Production de rapports d\u2019activit\u00e9s, comptes rendus et notes de synth\u00e8se \u00e0 haute valeur strat\u00e9gique",
+          "Participation \u00e0 une d\u00e9marche de planification strat\u00e9gique et d\u2019am\u00e9nagement du territoire \u00e0 l\u2019\u00e9chelle nationale",
+          "Contribution \u00e0 la r\u00e9daction des diagnostics territoriaux et \u00e0 l\u2019analyse des dynamiques territoriales",
+          "Participation \u00e0 l\u2019\u00e9laboration et \u00e0 la r\u00e9vision des diff\u00e9rents volets du SNAT : strat\u00e9gie, sc\u00e9narios prospectifs, orientations et programmes",
+          "Contribution au dispositif de suivi-\u00e9valuation du sch\u00e9ma",
+          "Animation d\u2019ateliers de concertation avec diff\u00e9rentes parties prenantes",
+          "Production de rapports d\u2019activit\u00e9 et de notes de synth\u00e8se destin\u00e9es aux d\u00e9cideurs",
         ],
         tags: [
           "SNAT-2045",
@@ -183,10 +210,11 @@ export const fr = {
         title: "Diagnostic & d\u00e9veloppement territorial",
         items: [
           "Diagnostic territorial",
+          "Observation territoriale",
+          "Analyse des dynamiques \u00e9conomiques et territoriales",
           "Diagnostic emploi & comp\u00e9tences",
           "Appui aux collectivit\u00e9s",
-          "Animation territoriale",
-          "Veille strat\u00e9gique",
+          "Cartographie et analyse spatiale",
         ],
         highlight: ["Diagnostic territorial", "Appui aux collectivit\u00e9s"],
       },
@@ -198,6 +226,8 @@ export const fr = {
           "Conception et planification",
           "Suivi des projets territoriaux",
           "\u00c9valuation de politiques publiques",
+          "Construction de tableaux de bord",
+          "Animation de r\u00e9unions et ateliers",
         ],
         highlight: [
           "Gestion de projets multi-acteurs",
@@ -207,20 +237,21 @@ export const fr = {
       {
         icon: "BarChart3",
         title: "Outils statistiques & SIG",
-        items: ["Stata", "R", "QGIS", "Eviews", "Python"],
-        highlight: ["Stata", "R", "QGIS"],
+        items: ["R", "Stata", "SPSS", "Eviews", "QGIS", "Python", "\u00c9conom\u00e9trie"],
+        highlight: ["R", "Stata", "QGIS"],
       },
       {
         icon: "Database",
         title: "Collecte & analyse de donn\u00e9es",
         items: [
+          "SurveyMonkey",
+          "KoboCollect",
           "LimeSurvey",
-          "KoboToolbox",
           "Entretiens semi-directifs",
           "Focus groupes",
           "Enqu\u00eates terrain",
         ],
-        highlight: ["LimeSurvey", "KoboToolbox"],
+        highlight: ["SurveyMonkey", "KoboCollect"],
       },
       {
         icon: "PenTool",
@@ -237,7 +268,7 @@ export const fr = {
       {
         icon: "Monitor",
         title: "Bureautique & outils",
-        items: ["Word", "Excel", "PowerPoint", "Pack Office"],
+        items: ["Word", "Excel", "PowerPoint", "LibreOffice", "Grist"],
         highlight: ["Excel", "PowerPoint"],
       },
     ],
@@ -278,14 +309,14 @@ export const fr = {
       {
         id: 3,
         title:
-          "Attractivit\u00e9 \u00e9conomique \u2014 Agoe-Nyive 2, Togo",
+          "Diagnostic emploi & territoire \u2014 Bassin d\u2019emploi de Sens",
         description:
-          "R\u00e9alisation d\u2019un diagnostic territorial sur les facteurs d\u2019attractivit\u00e9 \u00e9conomique. Conception et administration d\u2019un questionnaire \u00e0 grande \u00e9chelle. Collecte, traitement et analyse de donn\u00e9es socio-\u00e9conomiques, environnementales et d\u00e9mographiques. R\u00e9daction d\u2019un rapport strat\u00e9gique et pr\u00e9sentation des r\u00e9sultats aux d\u00e9cideurs locaux.",
+          "Analyse des caract\u00e9ristiques d\u00e9mographiques, \u00e9conomiques et sociales du territoire et des dynamiques de l\u2019emploi. Identification des secteurs et m\u00e9tiers en tension, analyse des \u00e9carts entre besoins des entreprises et profils des demandeurs d\u2019emploi, comparaison avec la r\u00e9gion. Formulation d\u2019enjeux prioritaires, de pistes d\u2019action et de recommandations.",
         tags: [
-          "Stata",
-          "Enqu\u00eates terrain",
+          "Diagnostic emploi",
+          "March\u00e9 du travail",
           "Diagnostic territorial",
-          "Togo",
+          "Recommandations",
         ],
         image: null,
         featured: false,
@@ -302,7 +333,7 @@ export const fr = {
     items: [
       {
         degree:
-          "Master mention \u00c9conomie appliqu\u00e9e \u2014 Expertise statistique pour l\u2019\u00e9conomie et la finance",
+          "Master mention \u00c9conomie appliqu\u00e9e \u2014 Expertise statistique pour l\u2019\u00e9conomie",
         school: "Universit\u00e9 de Lorraine",
         location: "Metz, France",
         detail:
@@ -333,10 +364,16 @@ export const fr = {
       },
     ],
     certifications: [
+      "Attractivité territoriale et marketing territorial : les fondamentaux — Centre national de la fonction publique territoriale (CNFPT)",
       "Conception de projets respectueux de l\u2019environnement et des populations \u2014 Agence Fran\u00e7aise de D\u00e9veloppement (AFD)",
       "\u00c9tude de faisabilit\u00e9 et \u00e9valuation environnementale et sociale \u2014 Agence Fran\u00e7aise de D\u00e9veloppement (AFD)",
     ],
     references: [
+      {
+        name: "Nadège CHAMBON",
+        email: "nadege.chambon@oise.gouv.fr",
+        role: "Adjointe au responsable du Service de l’Aménagement, de l’Urbanisme et de l’Énergie — DDT de l’Oise",
+      },
       {
         name: "Katharina SCHONE",
         email: "katharina.schone@u-bourgogne.fr",
@@ -386,7 +423,7 @@ export const fr = {
     error: "Erreur, r\u00e9essayez",
   },
   footer: {
-    text: "Ewakina Mathias AWELI \u00b7 \u00c9conomiste & Analyste territorial \u00b7 Metz, France",
+    text: "Ewakina Mathias AWELI \u00b7 \u00c9conomiste & Analyste territorial \u00b7 Beauvais, France",
   },
   personalInfo: {
     name: "Mathias E. AWELI",

@@ -13,7 +13,7 @@ export const en = {
     menuLabel: "Menu",
   },
   hero: {
-    available: "Available \u00b7 Beauvais, France \u00b7 April 2026",
+    available: "Available \u00b7 Beauvais, France",
     title1: "Economist",
     title2: "& Territorial",
     title3: "Analyst",
@@ -33,18 +33,18 @@ export const en = {
     title2: ", armed",
     title3: "with data",
     paragraph1:
-      "Passionate about local development, I have strong skills in data collection, processing and analysis, public policy evaluation and development project coordination.",
+      "Trained in territorial and public policy analysis, I use data, socio-economic diagnoses and territorial observation to identify the dynamics, needs and imbalances of a territory.",
     paragraph2:
-      "From the Ministry of Planning in Togo, through the Presidential Unit for Execution and Monitoring of Priority Projects (CPES) also in Togo, to the DREAL Grand Est, France \u2014 my experiences have allowed me to facilitate collaborative workshops, conduct field surveys and contribute to supporting local authorities in their planning and territorial attractiveness approaches.",
+      "From the DDT de l'Oise to the DREAL Grand Est and the Ministry of Planning in Togo, my career has led me to work on territorial development, employment, land and planning issues. Used to conducting studies, producing decision-support tools and working with diverse stakeholders, I now want to put these skills to work for employment development and support for territories.",
     quote:
       "Making sense of data to inform public decisions and support territories in their sustainable development.",
     labels: {
       currentPosition: "Current position",
       currentPositionValue:
-        "Agricultural Land & Territorial Data Research Officer \u2014 DDT de l'Oise \u2014 Beauvais, France (Apr \u2013 Present 2026)",
-      currentEducation: "Current education",
+        "Research Officer \u2014 DDT de l'Oise \u2014 Beauvais, France (Apr \u2013 Nov 2026)",
+      currentEducation: "Education",
       currentEducationValue:
-        "Master\u2019s in Statistical Expertise for Economics and Finance \u2014 University of Lorraine, Metz",
+        "Master\u2019s in Applied Economics \u2014 Statistical Expertise for Economics \u2014 University of Lorraine, Metz",
       email: "Email",
       languages: "Languages",
       mobility: "Mobility",
@@ -59,27 +59,28 @@ export const en = {
     statusDone: "Completed",
     items: [
       {
-        role: "Research Officer \u2014 Agricultural Land Diagnosis",
+        role: "Research Officer \u2014 Agricultural Land",
         company:
           "DDT de l'Oise \u00b7 Departmental Directorate of Territories",
         location: "Beauvais, France",
-        period: "Apr \u2013 Present",
+        period: "Apr \u2013 Nov 2026",
         status: "active" as const,
         project:
           "Departmental Agricultural Project (PAD) \u2014 Agricultural land component",
         tasks: [
-          "Completion of the departmental agricultural land diagnosis: data update, analyses and writing",
-          "Creation of the first departmental agricultural land dashboard",
-          "Organization and facilitation of meetings with institutional and banking stakeholders",
-          "Experimentation on soil ecosystem services and municipal land strategy",
-          "Update and mapping of commercial development data for the Oise department",
+          "Contribution to the territorial and land diagnosis at departmental level",
+          "Structuring, cross-referencing and analysing data to objectively assess land dynamics",
+          "Contribution to building a departmental dashboard on changes in agricultural land",
+          "Setting up data visualisation tools on land consumption and land-use planning projects",
+          "Production of analytical notes and decision-support material for public stakeholders",
+          "Participation in meetings with institutional stakeholders on land and territorial issues",
         ],
         tags: [
           "Agricultural land",
           "PAD",
           "Territorial diagnosis",
-          "Mapping",
-          "Ecosystem services",
+          "Dashboard",
+          "Data visualisation",
         ],
       },
       {
@@ -92,11 +93,11 @@ export const en = {
         project:
           "Assessment of citizen participation in the Grand-Est region",
         tasks: [
-          "Design and administration of survey tools: structured questionnaires and semi-structured interview guides",
-          "Conducting interviews with institutional, associative actors and local elected officials of the Grand Est region",
-          "Statistical analysis of collected data \u2014 processing, synthesis and interpretation of results",
-          "Writing analytical notes for regional public decision-makers",
-          "Thematic mapping of results with QGIS",
+          "Design of a survey protocol combining questionnaires and semi-structured interviews",
+          "Collection, processing and analysis of the data gathered",
+          "Analysis of results and identification of territorial dynamics",
+          "Writing an analytical note for decision-makers",
+          "Mapping of results in QGIS to visualise territorial dynamics",
         ],
         tags: [
           "QGIS",
@@ -104,6 +105,29 @@ export const en = {
           "Semi-structured interviews",
           "Statistical analysis",
           "Policy briefs",
+        ],
+      },
+      {
+        role: "Research Officer \u2014 Economic Attractiveness",
+        company: "Municipality of Ago\u00e8-Nyiv\u00e9 2",
+        location: "Togo",
+        period: "Apr \u2013 Sep 2024",
+        status: "done" as const,
+        project:
+          "Territorial diagnosis of economic attractiveness factors",
+        tasks: [
+          "Territorial diagnosis focused on economic attractiveness factors",
+          "Design and administration of a questionnaire for businesses and residents",
+          "Analysis of economic, social, environmental and demographic dynamics",
+          "Identification of levers for attractiveness and territorial development",
+          "Writing a strategic report",
+          "Presentation of results and proposals to local decision-makers",
+        ],
+        tags: [
+          "Territorial diagnosis",
+          "Economic attractiveness",
+          "Surveys",
+          "Strategic report",
         ],
       },
       {
@@ -116,9 +140,12 @@ export const en = {
         project:
           "Development of the National Land Use Planning Scheme (SNAT-2045)",
         tasks: [
-          "Analysis and review of SNAT strategic deliverables: diagnostic report, prospective scenarios, guidelines and monitoring-evaluation framework",
-          "Facilitation of multi-stakeholder consultation workshops (Ministers, Cabinet Directors, local elected officials, technical and financial partners)",
-          "Production of activity reports, minutes and high-value strategic synthesis notes",
+          "Participation in a national strategic planning and land-use planning process",
+          "Contribution to writing territorial diagnoses and analysing territorial dynamics",
+          "Participation in drafting and revising the SNAT components: strategy, prospective scenarios, guidelines and programmes",
+          "Contribution to the scheme\u2019s monitoring and evaluation framework",
+          "Facilitation of consultation workshops with various stakeholders",
+          "Production of activity reports and synthesis notes for decision-makers",
         ],
         tags: [
           "SNAT-2045",
@@ -184,10 +211,11 @@ export const en = {
         title: "Territorial diagnosis & development",
         items: [
           "Territorial diagnosis",
+          "Territorial observation",
+          "Analysis of economic and territorial dynamics",
           "Employment & skills diagnosis",
           "Local authority support",
-          "Territorial facilitation",
-          "Strategic monitoring",
+          "Mapping and spatial analysis",
         ],
         highlight: ["Territorial diagnosis", "Local authority support"],
       },
@@ -199,6 +227,8 @@ export const en = {
           "Design and planning",
           "Territorial project monitoring",
           "Public policy evaluation",
+          "Building dashboards",
+          "Facilitating meetings and workshops",
         ],
         highlight: [
           "Multi-stakeholder project management",
@@ -208,20 +238,21 @@ export const en = {
       {
         icon: "BarChart3",
         title: "Statistical & GIS tools",
-        items: ["Stata", "R", "QGIS", "Eviews", "Python"],
-        highlight: ["Stata", "R", "QGIS"],
+        items: ["R", "Stata", "SPSS", "Eviews", "QGIS", "Python", "Econometrics"],
+        highlight: ["R", "Stata", "QGIS"],
       },
       {
         icon: "Database",
         title: "Data collection & analysis",
         items: [
+          "SurveyMonkey",
+          "KoboCollect",
           "LimeSurvey",
-          "KoboToolbox",
           "Semi-structured interviews",
           "Focus groups",
           "Field surveys",
         ],
-        highlight: ["LimeSurvey", "KoboToolbox"],
+        highlight: ["SurveyMonkey", "KoboCollect"],
       },
       {
         icon: "PenTool",
@@ -238,7 +269,7 @@ export const en = {
       {
         icon: "Monitor",
         title: "Office tools",
-        items: ["Word", "Excel", "PowerPoint", "Office Suite"],
+        items: ["Word", "Excel", "PowerPoint", "LibreOffice", "Grist"],
         highlight: ["Excel", "PowerPoint"],
       },
     ],
@@ -277,10 +308,10 @@ export const en = {
       },
       {
         id: 3,
-        title: "Economic Attractiveness \u2014 Agoe-Nyive 2, Togo",
+        title: "Employment & Territory Diagnosis \u2014 Sens Employment Area",
         description:
-          "Territorial diagnosis on economic attractiveness factors. Design and administration of a large-scale questionnaire. Collection, processing and analysis of socio-economic, environmental and demographic data. Writing a strategic report and presenting results to local decision-makers.",
-        tags: ["Stata", "Field surveys", "Territorial diagnosis", "Togo"],
+          "Analysis of the area\u2019s demographic, economic and social characteristics and of employment dynamics. Identification of sectors and occupations with specific needs, analysis of gaps between employers\u2019 needs and jobseekers\u2019 profiles, comparison with the region. Definition of priority issues, courses of action and recommendations.",
+        tags: ["Employment diagnosis", "Labour market", "Territorial diagnosis", "Recommendations"],
         image: null,
         featured: false,
       },
@@ -296,7 +327,7 @@ export const en = {
     items: [
       {
         degree:
-          "Master\u2019s in Applied Economics \u2014 Statistical Expertise for Economics and Finance",
+          "Master\u2019s in Applied Economics \u2014 Statistical Expertise for Economics",
         school: "University of Lorraine",
         location: "Metz, France",
         detail:
@@ -327,10 +358,16 @@ export const en = {
       },
     ],
     certifications: [
+      "Territorial attractiveness and place marketing: the fundamentals — National Centre for Local Civil Service (CNFPT)",
       "Design of environmentally and socially responsible projects \u2014 French Development Agency (AFD)",
       "Feasibility study and environmental and social assessment \u2014 French Development Agency (AFD)",
     ],
     references: [
+      {
+        name: "Nadège CHAMBON",
+        email: "nadege.chambon@oise.gouv.fr",
+        role: "Deputy Head of the Planning, Urban Development and Energy Department — DDT de l'Oise",
+      },
       {
         name: "Katharina SCHONE",
         email: "katharina.schone@u-bourgogne.fr",
@@ -380,7 +417,7 @@ export const en = {
     error: "Error, try again",
   },
   footer: {
-    text: "Ewakina Mathias AWELI \u00b7 Economist & Territorial Analyst \u00b7 Metz, France",
+    text: "Ewakina Mathias AWELI \u00b7 Economist & Territorial Analyst \u00b7 Beauvais, France",
   },
   personalInfo: {
     name: "Mathias E. AWELI",

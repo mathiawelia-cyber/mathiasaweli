@@ -88,7 +88,7 @@ export default function Contact() {
               {t.contact.rows.map((row) => (
                 <a
                   key={row.label}
-                  href={row.href === "__CV__" ? assetPath("/CV_AWELI_Stage.pdf") : row.href}
+                  href={row.href === "__CV__" ? assetPath("/CV_Mathias_AWELI.pdf") : row.href}
                   target={row.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={row.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                   download={row.href === "__CV__" ? true : undefined}
