@@ -18,7 +18,14 @@ const body = Outfit({
   display: "swap",
 });
 
+const siteUrl = "https://mathiawelia-cyber.github.io/mathiasaweli";
+
 export const metadata: Metadata = {
+  metadataBase: new URL(`${siteUrl}/`),
+  icons: {
+    icon: `${siteUrl}/icone.png`,
+    apple: `${siteUrl}/icone.png`,
+  },
   title: "Mathias E. AWELI — Économiste & Analyste Territorial",
   description:
     "Portfolio de Ewakina Mathias AWELI, économiste et analyste territorial. Expertise en statistiques, SIG, data science et développement territorial.",
@@ -38,9 +45,19 @@ export const metadata: Metadata = {
       "Portfolio de Ewakina Mathias AWELI. Expertise en statistiques, SIG et data science.",
     type: "website",
     locale: "fr_FR",
+    url: `${siteUrl}/`,
+    images: [
+      {
+        url: `${siteUrl}/apercu-lien.jpg`,
+        width: 600,
+        height: 600,
+        alt: "Mathias E. AWELI",
+      },
+    ],
   },
   twitter: {
-    card: "summary_large_image",
+    card: "summary",
+    images: [`${siteUrl}/apercu-lien.jpg`],
     title: "Mathias E. AWELI — Économiste & Analyste Territorial",
     description:
       "Portfolio de Ewakina Mathias AWELI. Expertise en statistiques, SIG et data science.",
