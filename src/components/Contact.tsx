@@ -115,7 +115,7 @@ export default function Contact() {
                 {t.contact.formTitle}
               </h3>
               <form onSubmit={handleSubmit} className="flex flex-col gap-4">
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-2 gap-4 form-row">
                   <div>
                     <label style={{ fontSize: "0.75rem", color: "rgba(255,255,255,0.4)", marginBottom: 4, display: "block" }}>
                       {t.contact.nameLabel}

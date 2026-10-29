@@ -31,7 +31,7 @@ export default function Experience() {
             <motion.div
               key={index}
               variants={fadeUp}
-              className="grid gap-10 py-10 border-b border-[var(--border)]"
+              className="grid gap-10 py-10 border-b border-[var(--border)] xp-grid"
               style={{ gridTemplateColumns: "170px 1fr" }}
             >
               {/* Left column: date + status */}

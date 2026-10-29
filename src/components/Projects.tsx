@@ -46,7 +46,7 @@ export default function Projects() {
             <motion.div
               key={project.id}
               variants={fadeUp}
-              className={`proj-card ${project.featured ? "col-span-2" : ""}`}
+              className={`proj-card ${project.featured ? "col-span-2 proj-featured" : ""}`}
               style={project.featured ? { display: "grid", gridTemplateColumns: "1.1fr 1fr" } : {}}
             >
               {project.image ? (

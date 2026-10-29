@@ -71,6 +71,12 @@ export default function RootLayout({
             `,
           }}
         />
+        {/* Sans JavaScript (ex. aperçu iPhone depuis WhatsApp), les animations au défilement ne se lancent pas : on affiche tout */}
+        <noscript
+          dangerouslySetInnerHTML={{
+            __html: `<style>[style*="opacity:0"]{opacity:1!important}[style*="transform:translate"],[style*="transform:scale"]{transform:none!important}</style>`,
+          }}
+        />
       </head>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-body)]">
         <LanguageProvider>
