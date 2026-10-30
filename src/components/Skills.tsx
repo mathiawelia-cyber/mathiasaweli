@@ -55,7 +55,7 @@ const skillsDataFR = [
   },
   {
     icon: "🔍",
-    title: "Méthodes de recherche",
+    title: "Méthodes d’étude & d’évaluation",
     pills: [
       { label: "Diagnostic territorial", hi: true },
       { label: "Enquêtes quantitatives" },
@@ -138,7 +138,7 @@ const skillsDataEN = [
   },
   {
     icon: "🔍",
-    title: "Research Methods",
+    title: "Study & Evaluation Methods",
     pills: [
       { label: "Territorial diagnosis", hi: true },
       { label: "Quantitative surveys" },
