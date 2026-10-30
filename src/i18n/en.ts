@@ -4,7 +4,7 @@ export const en = {
       { label: "About", href: "#about" },
       { label: "Experience", href: "#experience" },
       { label: "Skills", href: "#skills" },
-      { label: "Projects", href: "#projects" },
+      { label: "Achievements", href: "#projects" },
       { label: "Education", href: "#education" },
       { label: "Contact", href: "#contact" },
     ],
@@ -275,8 +275,8 @@ export const en = {
     ],
   },
   projects: {
-    eyebrow: "04 \u2014 Achievements",
-    title: "Projects",
+    eyebrow: "04 \u2014 Projects & tools",
+    title: "Achievements",
     contactLink: "Contact me \u2192",
     githubLink: "GitHub \u2192",
     items: [
@@ -287,6 +287,17 @@ export const en = {
           "CAC 40 trend prediction application using XGBoost for classification and K-Means for market regime clustering. Interactive interface via Streamlit.",
         tags: ["Python", "XGBoost", "K-Means", "Streamlit", "Finance"],
         image: "/PRedictionCAC40.png",
+        featured: true,
+        github: "#",
+      },
+      {
+        id: 4,
+        title: "Oise Land Consumption Trajectory Tracker",
+        description:
+          "Data visualisation and monitoring tool for land consumption, developed during my internship at the DDT de l'Oise. It shows planned consumption by inter-municipal authority (EPCI: U, AU and 2AU zones, planning documents) and past consumption by SCoT, compared with the SRADDET 2030 target under three scenarios: ideal, trend-based and alternative. Works on both desktop and mobile.",
+        tags: ["Dataviz", "Land consumption", "SRADDET", "Dashboard", "DDT de l'Oise"],
+        image: "/suivi-foncier-ordinateur.png",
+        images: ["/suivi-foncier-ordinateur.png", "/suivi-foncier-mobile.png"],
         featured: true,
         github: "#",
       },

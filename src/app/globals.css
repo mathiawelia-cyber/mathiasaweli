@@ -428,6 +428,7 @@ body {
   .proj-grid-custom > * { grid-column: auto !important; }
   .proj-featured { grid-template-columns: 1fr !important; }
   .proj-featured img { min-height: 0 !important; height: 210px !important; }
+  .proj-featured .proj-gallery img { height: auto !important; }
   .xp-grid { grid-template-columns: 1fr !important; gap: 0.5rem !important; }
 }
 

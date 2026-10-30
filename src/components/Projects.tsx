@@ -49,7 +49,21 @@ export default function Projects() {
               className={`proj-card ${project.featured ? "col-span-2 proj-featured" : ""}`}
               style={project.featured ? { display: "grid", gridTemplateColumns: "1.1fr 1fr" } : {}}
             >
-              {project.image ? (
+              {project.images ? (
+                <div className="proj-gallery flex flex-col justify-center gap-3 p-3" style={{ background: "var(--surface2)" }}>
+                  {project.images.map((src) => (
+                    <Image
+                      key={src}
+                      src={assetPath(src)}
+                      alt={project.title}
+                      width={600}
+                      height={300}
+                      className="w-full rounded"
+                      style={{ height: "auto", objectFit: "contain" }}
+                    />
+                  ))}
+                </div>
+              ) : project.image ? (
                 <Image
                   src={assetPath(project.image)}
                   alt={project.title}

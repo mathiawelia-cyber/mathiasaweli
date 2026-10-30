@@ -4,7 +4,7 @@ export const fr = {
       { label: "À propos", href: "#about" },
       { label: "Expérience", href: "#experience" },
       { label: "Compétences", href: "#skills" },
-      { label: "Projets", href: "#projects" },
+      { label: "Réalisations", href: "#projects" },
       { label: "Formation", href: "#education" },
       { label: "Contact", href: "#contact" },
     ],
@@ -274,8 +274,8 @@ export const fr = {
     ],
   },
   projects: {
-    eyebrow: "04 \u2014 R\u00e9alisations",
-    title: "Projets",
+    eyebrow: "04 \u2014 Projets & outils",
+    title: "R\u00e9alisations",
     contactLink: "Me contacter \u2192",
     githubLink: "GitHub \u2192",
     items: [
@@ -286,6 +286,17 @@ export const fr = {
           "Application de pr\u00e9diction des tendances du CAC 40 utilisant XGBoost pour la classification et K-Means pour le clustering de r\u00e9gimes de march\u00e9. Interface interactive via Streamlit.",
         tags: ["Python", "XGBoost", "K-Means", "Streamlit", "Finance"],
         image: "/PRedictionCAC40.png",
+        featured: true,
+        github: "#",
+      },
+      {
+        id: 4,
+        title: "Suivi de la trajectoire foncière de l’Oise",
+        description:
+          "Outil de datavisualisation et de suivi de la consommation foncière développé dans le cadre de mon stage à la DDT de l’Oise. Il présente la consommation planifiée par EPCI (zones U, AU et 2AU, documents d’urbanisme) et la consommation passée par SCoT, comparées à l’objectif SRADDET 2030 selon trois scénarios : idéal, conjoncturel et alternatif. Consultable sur ordinateur comme sur téléphone.",
+        tags: ["Dataviz", "Consommation foncière", "SRADDET", "Tableau de bord", "DDT de l’Oise"],
+        image: "/suivi-foncier-ordinateur.png",
+        images: ["/suivi-foncier-ordinateur.png", "/suivi-foncier-mobile.png"],
         featured: true,
         github: "#",
       },
