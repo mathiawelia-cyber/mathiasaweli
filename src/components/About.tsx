@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { AnimateOnScroll, fadeUp, staggerContainer } from "@/lib/motion";
 import { useTranslation } from "@/i18n";
-import { assetPath } from "@/lib/utils";
+import { assetPath, trackCvDownload } from "@/lib/utils";
 import { useRef } from "react";
 import { useInView } from "framer-motion";
 
@@ -107,6 +107,7 @@ export default function About() {
                 href={assetPath(t.personalInfo.cv)}
                 target="_blank"
                 rel="noopener noreferrer"
+                onClick={() => trackCvDownload(t.personalInfo.cv)}
                 className="btn btn-primary"
               >
                 {t.about.labels.downloadCV}

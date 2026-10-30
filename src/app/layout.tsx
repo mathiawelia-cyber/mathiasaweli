@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Outfit } from "next/font/google";
 import { ThemeProvider } from "@/lib/theme-provider";
 import { LanguageProvider } from "@/lib/language-provider";
+import { GOATCOUNTER_CODE } from "@/lib/utils";
 import "./globals.css";
 
 const heading = Cormorant_Garamond({
@@ -93,6 +94,12 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `<style>[style*="opacity:0"]{opacity:1!important}[style*="transform:translate"],[style*="transform:scale"]{transform:none!important}</style>`,
           }}
+        />
+        {/* Compteur de visites GoatCounter (sans cookies) */}
+        <script
+          data-goatcounter={`https://${GOATCOUNTER_CODE}.goatcounter.com/count`}
+          async
+          src="https://gc.zgo.at/count.js"
         />
       </head>
       <body className="min-h-full flex flex-col font-[family-name:var(--font-body)]">

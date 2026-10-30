@@ -2,7 +2,7 @@
 
 import { motion, useInView } from "framer-motion";
 import { useRef, useState, FormEvent } from "react";
-import { assetPath } from "@/lib/utils";
+import { assetPath, trackCvDownload } from "@/lib/utils";
 import { useTranslation } from "@/i18n";
 
 const fadeUp = {
@@ -92,6 +92,7 @@ export default function Contact() {
                   target={row.href.startsWith("mailto") ? undefined : "_blank"}
                   rel={row.href.startsWith("mailto") ? undefined : "noopener noreferrer"}
                   download={row.href === "__CV__" ? true : undefined}
+                  onClick={row.href === "__CV__" ? () => trackCvDownload(t.personalInfo.cv) : undefined}
                   className="c-row"
                 >
                   <span style={{ fontSize: "1.15rem", flexShrink: 0 }}>{row.icon}</span>
