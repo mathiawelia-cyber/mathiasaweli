@@ -87,6 +87,16 @@ export default function Projects() {
                 <p style={{ fontSize: "0.85rem", color: "var(--ink-muted)", lineHeight: 1.75, flex: 1, marginBottom: "1.2rem" }}>
                   {project.description}
                 </p>
+                {project.credit && (
+                  <a
+                    href={project.creditUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    style={{ fontSize: "0.7rem", color: "var(--ink-faint)", textDecoration: "none", marginTop: "-0.6rem", marginBottom: "1rem" }}
+                  >
+                    {project.credit}
+                  </a>
+                )}
                 <div className="flex items-center justify-between pt-4" style={{ borderTop: "1px solid var(--border)" }}>
                   <span style={{ fontSize: "0.74rem", color: "var(--ink-faint)" }}>{project.tags.join(" · ")}</span>
                   <a

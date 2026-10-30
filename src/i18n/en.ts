@@ -323,7 +323,9 @@ export const en = {
         description:
           "Analysis of the area\u2019s demographic, economic and social characteristics and of employment dynamics. Identification of sectors and occupations with specific needs, analysis of gaps between employers\u2019 needs and jobseekers\u2019 profiles, comparison with the region. Definition of priority issues, courses of action and recommendations.",
         tags: ["Employment diagnosis", "Labour market", "Territorial diagnosis", "Recommendations"],
-        image: null,
+        image: "/bassin-emploi-sens.jpg",
+        credit: "Photo: Robin Chubret — CC BY-SA 4.0",
+        creditUrl: "https://commons.wikimedia.org/wiki/File:Sens,_Yonne,_panorama.jpg",
         featured: false,
       },
     ],
