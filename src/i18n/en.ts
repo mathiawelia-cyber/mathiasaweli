@@ -35,7 +35,7 @@ export const en = {
     paragraph1:
       "Trained in territorial and public policy analysis, I use data, socio-economic diagnoses and territorial observation to identify the dynamics, needs and imbalances of a territory.",
     paragraph2:
-      "From the DDT de l'Oise to the DREAL Grand Est and the Ministry of Planning in Togo, my career has led me to work on territorial development, employment, land and planning issues. Used to conducting studies, producing decision-support tools and working with diverse stakeholders, I now want to put these skills to work for employment development and support for territories.",
+      "From the DDT de l'Oise to the DREAL Grand Est and the Ministry of Planning in Togo, my career has led me to work on territorial development, employment, land and planning issues. Used to conducting studies, producing decision-support tools and working with diverse stakeholders, I now want to put these skills to work for the development and support of territories.",
     quote:
       "Making sense of data to inform public decisions and support territories in their sustainable development.",
     labels: {

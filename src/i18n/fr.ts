@@ -35,7 +35,7 @@ export const fr = {
     paragraph1:
       "Form\u00e9 \u00e0 l\u2019analyse territoriale et des politiques publiques, je mobilise les donn\u00e9es, les diagnostics socio-\u00e9conomiques et l\u2019observation territoriale pour identifier les dynamiques, les besoins et les d\u00e9s\u00e9quilibres d\u2019un territoire.",
     paragraph2:
-      "De la DDT de l\u2019Oise \u00e0 la DREAL Grand Est, jusqu\u2019au Minist\u00e8re de la Planification au Togo, mon parcours m\u2019a conduit \u00e0 travailler sur des probl\u00e9matiques de d\u00e9veloppement territorial, d\u2019emploi, de foncier et de planification. Habitu\u00e9 \u00e0 conduire des \u00e9tudes, produire des outils d\u2019aide \u00e0 la d\u00e9cision et travailler avec diff\u00e9rents acteurs, je souhaite aujourd\u2019hui mettre ces comp\u00e9tences au service du d\u00e9veloppement de l\u2019emploi et de l\u2019accompagnement des territoires.",
+      "De la DDT de l\u2019Oise \u00e0 la DREAL Grand Est, jusqu\u2019au Minist\u00e8re de la Planification au Togo, mon parcours m\u2019a conduit \u00e0 travailler sur des probl\u00e9matiques de d\u00e9veloppement territorial, d\u2019emploi, de foncier et de planification. Habitu\u00e9 \u00e0 conduire des \u00e9tudes, produire des outils d\u2019aide \u00e0 la d\u00e9cision et travailler avec diff\u00e9rents acteurs, je souhaite aujourd\u2019hui mettre ces comp\u00e9tences au service du d\u00e9veloppement et de l\u2019accompagnement des territoires.",
     quote:
       "Donner du sens aux donn\u00e9es pour \u00e9clairer les d\u00e9cisions publiques et accompagner les territoires dans leur d\u00e9veloppement durable.",
     labels: {
