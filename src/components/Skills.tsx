@@ -62,7 +62,16 @@ const skillsDataFR = [
       { label: "Entretiens semi-directifs" },
       { label: "Focus groupes" },
       { label: "Évaluation politiques publiques" },
-      { label: "LimeSurvey · KoBoToolbox" },
+    ],
+  },
+  {
+    icon: "📋",
+    title: "Outils d'analyse et d'enquête",
+    pills: [
+      { label: "LimeSurvey", hi: true },
+      { label: "SurveyMonkey", hi: true },
+      { label: "KoboCollect" },
+      { label: "Grist" },
     ],
   },
   {
@@ -73,6 +82,7 @@ const skillsDataFR = [
       { label: "Notes de synthèse", hi: true },
       { label: "Comptes rendus d'ateliers" },
       { label: "Pack Office avancé" },
+      { label: "LibreOffice" },
       { label: "Aisance écrite & orale" },
     ],
   },
@@ -135,7 +145,16 @@ const skillsDataEN = [
       { label: "Semi-structured interviews" },
       { label: "Focus groups" },
       { label: "Public policy evaluation" },
-      { label: "LimeSurvey · KoBoToolbox" },
+    ],
+  },
+  {
+    icon: "📋",
+    title: "Analysis & Survey Tools",
+    pills: [
+      { label: "LimeSurvey", hi: true },
+      { label: "SurveyMonkey", hi: true },
+      { label: "KoboCollect" },
+      { label: "Grist" },
     ],
   },
   {
@@ -146,6 +165,7 @@ const skillsDataEN = [
       { label: "Synthesis notes", hi: true },
       { label: "Workshop reports" },
       { label: "Advanced Office Suite" },
+      { label: "LibreOffice" },
       { label: "Written & oral fluency" },
     ],
   },
