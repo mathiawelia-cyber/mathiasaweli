@@ -441,5 +441,6 @@ export const en = {
     github: "https://github.com/mathiawelia-cyber",
     languages: ["French (native)", "English (intermediate)"],
     mobility: "Driving license (B)",
+    cv: "/CV_Mathias_AWELI_EN.pdf",
   },
 };

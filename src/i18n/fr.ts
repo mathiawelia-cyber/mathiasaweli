@@ -450,5 +450,6 @@ export const fr = {
       "Anglais (interm\u00e9diaire)",
     ],
     mobility: "Permis B",
+    cv: "/CV_Mathias_AWELI.pdf",
   },
 };
