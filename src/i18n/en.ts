@@ -281,16 +281,6 @@ export const en = {
     githubLink: "GitHub \u2192",
     items: [
       {
-        id: 1,
-        title: "CAC 40 Prediction \u2014 AlphaEdge",
-        description:
-          "CAC 40 trend prediction application using XGBoost for classification and K-Means for market regime clustering. Interactive interface via Streamlit.",
-        tags: ["Python", "XGBoost", "K-Means", "Streamlit", "Finance"],
-        image: "/PRedictionCAC40.png",
-        featured: true,
-        github: "#",
-      },
-      {
         id: 4,
         title: "Oise Land Consumption Trajectory Tracker",
         description:
@@ -298,6 +288,16 @@ export const en = {
         tags: ["Dataviz", "Land consumption", "SRADDET", "Dashboard", "DDT de l'Oise"],
         image: "/suivi-foncier-ordinateur.png",
         images: ["/suivi-foncier-ordinateur.png", "/suivi-foncier-mobile.png"],
+        featured: true,
+        github: "#",
+      },
+      {
+        id: 1,
+        title: "CAC 40 Prediction \u2014 AlphaEdge",
+        description:
+          "CAC 40 trend prediction application using XGBoost for classification and K-Means for market regime clustering. Interactive interface via Streamlit.",
+        tags: ["Python", "XGBoost", "K-Means", "Streamlit", "Finance"],
+        image: "/PRedictionCAC40.png",
         featured: true,
         github: "#",
       },

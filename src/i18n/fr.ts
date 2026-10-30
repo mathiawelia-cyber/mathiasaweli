@@ -280,16 +280,6 @@ export const fr = {
     githubLink: "GitHub \u2192",
     items: [
       {
-        id: 1,
-        title: "Pr\u00e9diction CAC 40 \u2014 AlphaEdge",
-        description:
-          "Application de pr\u00e9diction des tendances du CAC 40 utilisant XGBoost pour la classification et K-Means pour le clustering de r\u00e9gimes de march\u00e9. Interface interactive via Streamlit.",
-        tags: ["Python", "XGBoost", "K-Means", "Streamlit", "Finance"],
-        image: "/PRedictionCAC40.png",
-        featured: true,
-        github: "#",
-      },
-      {
         id: 4,
         title: "Suivi de la trajectoire foncière de l’Oise",
         description:
@@ -297,6 +287,16 @@ export const fr = {
         tags: ["Dataviz", "Consommation foncière", "SRADDET", "Tableau de bord", "DDT de l’Oise"],
         image: "/suivi-foncier-ordinateur.png",
         images: ["/suivi-foncier-ordinateur.png", "/suivi-foncier-mobile.png"],
+        featured: true,
+        github: "#",
+      },
+      {
+        id: 1,
+        title: "Pr\u00e9diction CAC 40 \u2014 AlphaEdge",
+        description:
+          "Application de pr\u00e9diction des tendances du CAC 40 utilisant XGBoost pour la classification et K-Means pour le clustering de r\u00e9gimes de march\u00e9. Interface interactive via Streamlit.",
+        tags: ["Python", "XGBoost", "K-Means", "Streamlit", "Finance"],
+        image: "/PRedictionCAC40.png",
         featured: true,
         github: "#",
       },
