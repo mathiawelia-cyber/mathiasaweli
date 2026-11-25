@@ -49,6 +49,11 @@ export const en = {
       languages: "Languages",
       mobility: "Mobility",
       linkedin: "LinkedIn",
+      strengths: "Strengths",
+      strengthsValue:
+        "Analytical and synthesis skills \u00b7 Mediation \u00b7 Diplomacy \u00b7 Strong oral and written communication \u00b7 Proactive and independent \u00b7 Adaptable and organised \u00b7 Teamwork \u00b7 Good listener",
+      interests: "Interests",
+      interestsValue: "Video editing \u00b7 Graphic design \u00b7 Travel \u00b7 Football \u00b7 Reading",
       downloadCV: "Download CV (PDF) \u2192",
     },
   },
@@ -74,6 +79,10 @@ export const en = {
           "Setting up data visualisation tools on land consumption and land-use planning projects",
           "Production of analytical notes and decision-support material for public stakeholders",
           "Participation in meetings with institutional stakeholders on land and territorial issues",
+          "Design of a consolidated database from 10 monthly SIAP extracts with heterogeneous structures, linked by a common identifier",
+          "Cleaning, selection and restructuring of the data (from several rows per file to a column format)",
+          "Set-up of automated monitoring, updated with each new extract",
+          "Development of a Grist solution that non-developer staff can use on their own",
         ],
         tags: [
           "Agricultural land",
@@ -81,6 +90,8 @@ export const en = {
           "Territorial diagnosis",
           "Dashboard",
           "Data visualisation",
+          "Database",
+          "Grist",
         ],
       },
       {
@@ -93,9 +104,11 @@ export const en = {
         project:
           "Assessment of citizen participation in the Grand-Est region",
         tasks: [
-          "Design of a survey protocol combining questionnaires and semi-structured interviews",
-          "Collection, processing and analysis of the data gathered",
-          "Analysis of results and identification of territorial dynamics",
+          "Contribution to a review of citizen participation practices",
+          "Design of the survey protocol and data collection tools: questionnaires and semi-structured interview guides",
+          "Gathering the perceptions and expectations of the stakeholders interviewed",
+          "Analysis of the practices and contributions collected",
+          "Identification of the study\u2019s main lessons",
           "Writing an analytical note for decision-makers",
           "Mapping of results in QGIS to visualise territorial dynamics",
         ],
@@ -111,7 +124,7 @@ export const en = {
         role: "Research Officer \u2014 Economic Attractiveness",
         company: "Municipality of Ago\u00e8-Nyiv\u00e9 2",
         location: "Togo",
-        period: "Apr \u2013 Sep 2024",
+        period: "Apr \u2013 Aug 2024",
         status: "done" as const,
         project:
           "Territorial diagnosis of economic attractiveness factors",
@@ -155,26 +168,25 @@ export const en = {
         ],
       },
       {
-        role: "Research Officer \u2014 ZAAP Agricultural Zones",
+        role: "Field Surveyor \u2014 ZAAP Agricultural Zones",
         company:
           "Presidential Unit for Execution and Monitoring of Priority Projects (CPES)",
         location: "Lom\u00e9, Togo",
-        period: "Sep \u2013 Oct 2022",
+        period: "Sep \u2013 Dec 2022",
         status: "done" as const,
         project:
-          "Data collection on ZAAP \u2014 Maritime and Plateaux Regions",
+          "Diagnoses and surveys of farmers \u2014 Planned Agricultural Development Zones (ZAAP), Maritime and Plateaux Regions",
         tasks: [
-          "Agricultural field surveys in two regions of Togo",
-          "Conducting 10 focus groups and 25 individual interviews on production conditions and resource access",
-          "Collection, processing and analysis of socio-economic data",
-          "Writing the final mission report",
+          "Field surveys conducted directly with farmers in the Maritime and Plateaux Regions",
+          "Facilitation of focus groups and individual interviews with local stakeholders",
+          "Analysis of the results and writing of a summary report",
         ],
         tags: [
           "Field surveys",
+          "Farmers",
           "Focus groups",
           "ZAAP",
-          "Socio-economic analysis",
-          "Mission report",
+          "Summary report",
         ],
       },
       {
@@ -394,7 +406,7 @@ export const en = {
       {
         name: "KULO Abalo",
         email: "kulomathias@yahoo.fr",
-        role: "Professor & Director of the School of Agronomy \u2014 University of Lom\u00e9, Togo",
+        role: "Professor and Doctor of Veterinary Medicine \u2014 Higher School of Agronomy, Togo",
       },
     ],
   },

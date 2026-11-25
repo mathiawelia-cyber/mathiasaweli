@@ -100,6 +100,16 @@ export default function About() {
                   </a>
                 </span>
               </motion.div>
+
+              <motion.div variants={fadeUp} className="info-row">
+                <span className="info-key">{t.about.labels.strengths}</span>
+                <span className="info-val">{t.about.labels.strengthsValue}</span>
+              </motion.div>
+
+              <motion.div variants={fadeUp} className="info-row">
+                <span className="info-key">{t.about.labels.interests}</span>
+                <span className="info-val">{t.about.labels.interestsValue}</span>
+              </motion.div>
             </div>
 
             <motion.div variants={fadeUp} style={{ marginTop: "2.5rem" }}>

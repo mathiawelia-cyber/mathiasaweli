@@ -62,6 +62,8 @@ const skillsDataFR = [
       { label: "Entretiens semi-directifs" },
       { label: "Focus groupes" },
       { label: "Évaluation politiques publiques" },
+      { label: "Observation & analyse foncière" },
+      { label: "Indicateurs & tableaux de bord" },
     ],
   },
   {
@@ -95,6 +97,8 @@ const skillsDataFR = [
       { label: "Gestion multi-acteurs" },
       { label: "Animation d'ateliers" },
       { label: "Appui aux collectivités" },
+      { label: "Dynamiques agricoles & rurales" },
+      { label: "Concertation & partenariats" },
     ],
   },
 ];
@@ -145,6 +149,8 @@ const skillsDataEN = [
       { label: "Semi-structured interviews" },
       { label: "Focus groups" },
       { label: "Public policy evaluation" },
+      { label: "Land observation & analysis" },
+      { label: "Indicators & dashboards" },
     ],
   },
   {
@@ -178,6 +184,8 @@ const skillsDataEN = [
       { label: "Multi-stakeholder management" },
       { label: "Workshop facilitation" },
       { label: "Local authority support" },
+      { label: "Agricultural & rural dynamics" },
+      { label: "Consultation & partnerships" },
     ],
   },
 ];

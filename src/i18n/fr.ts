@@ -49,6 +49,11 @@ export const fr = {
       languages: "Langues",
       mobility: "Mobilit\u00e9",
       linkedin: "LinkedIn",
+      strengths: "Atouts",
+      strengthsValue:
+        "Capacit\u00e9 d\u2019analyse et de synth\u00e8se \u00b7 Sens de la m\u00e9diation \u00b7 Diplomatie \u00b7 Aisance orale et \u00e9crite \u00b7 Dynamique et autonome \u00b7 Adaptable et organis\u00e9 \u00b7 Travail en \u00e9quipe \u00b7 Sens de l\u2019\u00e9coute",
+      interests: "Centres d\u2019int\u00e9r\u00eat",
+      interestsValue: "Montage vid\u00e9o \u00b7 Graphisme \u00b7 Tourisme \u00b7 Football \u00b7 Lecture",
       downloadCV: "T\u00e9l\u00e9charger le CV (PDF) \u2192",
     },
   },
@@ -74,6 +79,10 @@ export const fr = {
           "Mise en place d\u2019outils de datavisualisation sur la consommation fonci\u00e8re et les projets li\u00e9s \u00e0 l\u2019am\u00e9nagement du territoire",
           "Production de notes d\u2019analyse et d\u2019\u00e9l\u00e9ments d\u2019aide \u00e0 la d\u00e9cision \u00e0 destination des acteurs publics",
           "Participation \u00e0 des r\u00e9unions avec des acteurs institutionnels autour des enjeux fonciers et territoriaux",
+          "Conception d\u2019une base de donn\u00e9es consolid\u00e9e \u00e0 partir de 10 extractions SIAP mensuelles aux structures h\u00e9t\u00e9rog\u00e8nes, reli\u00e9es par un identifiant commun",
+          "Nettoyage, s\u00e9lection et restructuration des donn\u00e9es (passage de plusieurs lignes par dossier \u00e0 un format en colonnes)",
+          "Mise en place d\u2019un suivi automatis\u00e9, mis \u00e0 jour \u00e0 chaque nouvelle extraction",
+          "D\u00e9veloppement d\u2019une solution sous Grist, utilisable en autonomie par des agents non-d\u00e9veloppeurs",
         ],
         tags: [
           "Foncier agricole",
@@ -81,6 +90,8 @@ export const fr = {
           "Diagnostic territorial",
           "Tableau de bord",
           "Datavisualisation",
+          "Base de donn\u00e9es",
+          "Grist",
         ],
       },
       {
@@ -93,9 +104,11 @@ export const fr = {
         project:
           "\u00c9tat des lieux de la participation citoyenne dans la r\u00e9gion Grand-Est",
         tasks: [
-          "Conception d\u2019un protocole d\u2019enqu\u00eate combinant questionnaires et entretiens semi-directifs",
-          "Collecte, traitement et analyse des donn\u00e9es recueillies",
-          "Analyse des r\u00e9sultats et identification des dynamiques territoriales",
+          "Contribution \u00e0 un \u00e9tat des lieux des pratiques de participation citoyenne",
+          "\u00c9laboration du protocole d\u2019enqu\u00eate et des outils de recueil : questionnaires et guides d\u2019entretiens semi-directifs",
+          "Recueil des perceptions et attentes des diff\u00e9rents acteurs interrog\u00e9s",
+          "Analyse des pratiques et des contributions recueillies",
+          "Identification des principaux enseignements de l\u2019\u00e9tude",
           "R\u00e9daction d\u2019une note d\u2019analyse destin\u00e9e aux d\u00e9cideurs",
           "Cartographie des r\u00e9sultats sous QGIS pour visualiser les dynamiques territoriales",
         ],
@@ -111,7 +124,7 @@ export const fr = {
         role: "Charg\u00e9 d\u2019\u00e9tude \u2014 Attractivit\u00e9 \u00e9conomique",
         company: "Commune d\u2019Ago\u00e8-Nyiv\u00e9 2",
         location: "Togo",
-        period: "Avr \u2013 Sept 2024",
+        period: "Avr \u2013 Ao\u00fbt 2024",
         status: "done" as const,
         project:
           "Diagnostic territorial sur les facteurs d\u2019attractivit\u00e9 \u00e9conomique",
@@ -155,26 +168,25 @@ export const fr = {
         ],
       },
       {
-        role: "Charg\u00e9 d\u2019\u00e9tude \u2014 Zones agricoles ZAAP",
+        role: "Agent enqu\u00eateur \u2014 Zones agricoles ZAAP",
         company:
           "Cellule Pr\u00e9sidentielle d\u2019Ex\u00e9cution et de Suivi des Projets Prioritaires (CPES)",
         location: "Lom\u00e9, Togo",
-        period: "Sept \u2013 Oct 2022",
+        period: "Sept \u2013 D\u00e9c 2022",
         status: "done" as const,
         project:
-          "Collecte de donn\u00e9es sur les ZAAP \u2014 R\u00e9gions Maritime et Plateaux",
+          "Diagnostics et enqu\u00eates aupr\u00e8s des exploitants agricoles \u2014 Zones d\u2019am\u00e9nagement agricole planifi\u00e9es (ZAAP), R\u00e9gions Maritime et Plateaux",
         tasks: [
-          "Enqu\u00eates agricoles de terrain dans deux r\u00e9gions du Togo",
-          "Conduite de 10 focus groupes et 25 entretiens individuels sur les conditions de production et l\u2019acc\u00e8s aux ressources",
-          "Collecte, traitement et analyse des donn\u00e9es socio-\u00e9conomiques",
-          "R\u00e9daction du rapport de mission final",
+          "Conduite d\u2019enqu\u00eates de terrain directement aupr\u00e8s des exploitants agricoles, dans la R\u00e9gion Maritime et la R\u00e9gion Plateaux",
+          "Animation de focus groupes et d\u2019entretiens individuels avec les acteurs locaux",
+          "Analyse des r\u00e9sultats et r\u00e9daction d\u2019un rapport de synth\u00e8se",
         ],
         tags: [
           "Enqu\u00eates terrain",
+          "Exploitants agricoles",
           "Focus groupes",
           "ZAAP",
-          "Analyse socio-\u00e9co",
-          "Rapport de mission",
+          "Rapport de synth\u00e8se",
         ],
       },
       {
@@ -400,7 +412,7 @@ export const fr = {
       {
         name: "KULO Abalo",
         email: "kulomathias@yahoo.fr",
-        role: "Professeur & Directeur de l\u2019\u00c9cole Sup\u00e9rieure d\u2019Agronomie \u2014 Universit\u00e9 de Lom\u00e9, Togo",
+        role: "Professeur et Docteur v\u00e9t\u00e9rinaire \u2014 \u00c9cole sup\u00e9rieure d\u2019agronomie, Togo",
       },
     ],
   },
